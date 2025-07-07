@@ -46,6 +46,7 @@
   "author": "Andrey Sidorov <andrey.sidorov@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/node": ">=22",
     "aws-ssl-profiles": "^1.1.1",
     "denque": "^2.1.0",
     "generate-function": "^2.3.1",
@@ -60,7 +61,6 @@
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.21.0",
     "@eslint/markdown": "^6.2.2",
-    "@types/node": "^24.0.0",
     "@typescript-eslint/eslint-plugin": "^8.26.0",
     "@typescript-eslint/parser": "^8.26.0",
     "assert-diff": "^3.0.2",
