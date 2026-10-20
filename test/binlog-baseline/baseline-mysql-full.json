@@ -1,0 +1,5103 @@
+{
+ "scenarios": {
+  "types": {
+   "count": 7,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 138,
+      "logPos": 376,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 138,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_tinyint (id INT PRIMARY KEY, v TINYINT)"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 455,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 71,
+      "logPos": 530,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 71,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 29,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    }
+   ],
+   "error": "this.packet.readVariableLengthString is not a function"
+  },
+  "dml": {
+   "count": 7,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 127,
+      "logPos": 365,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 127,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_small (a INT, b VARCHAR(20))"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 444,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 71,
+      "logPos": 519,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 71,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 29,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    }
+   ],
+   "error": "this.packet.readVariableLengthString is not a function"
+  },
+  "rows_query": {
+   "count": 8,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 129,
+      "logPos": 367,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 129,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_rq (id INT PRIMARY KEY, v INT)"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 446,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 71,
+      "logPos": 521,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 71,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 29,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 29,
+      "serverId": 1,
+      "eventSize": 55,
+      "logPos": 580,
+      "flags": 128
+     },
+     "eventType": 29,
+     "eventSize": 55,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    }
+   ],
+   "error": "this.packet.readVariableLengthString is not a function"
+  },
+  "xa": {
+   "count": 7,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 122,
+      "logPos": 360,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 122,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_xa (id INT PRIMARY KEY)"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 439,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 88,
+      "logPos": 531,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 88,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 29,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "XA START X'7831',X'',1"
+    }
+   ],
+   "error": "this.packet.readVariableLengthString is not a function"
+  },
+  "partial_json": {
+   "count": 7,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 132,
+      "logPos": 370,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 132,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_pj (id INT PRIMARY KEY, doc JSON)"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 449,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 71,
+      "logPos": 524,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 71,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 29,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    }
+   ],
+   "error": "this.packet.readVariableLengthString is not a function"
+  },
+  "compression": {
+   "count": 7,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 139,
+      "logPos": 377,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 139,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_cmp (id INT PRIMARY KEY, v VARCHAR(100))"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 456,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 40,
+      "serverId": 1,
+      "flags": 0
+     },
+     "eventType": 40,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    }
+   ]
+  },
+  "sbr_intvar": {
+   "count": 21,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 153,
+      "logPos": 391,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 153,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_sbr (id INT AUTO_INCREMENT PRIMARY KEY, v VARCHAR(60))"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 470,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 78,
+      "logPos": 552,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 78,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    },
+    {
+     "ctor": "IntvarEvent",
+     "eventHeader": {
+      "eventType": 5,
+      "serverId": 1,
+      "eventSize": 28,
+      "logPos": 584,
+      "flags": 0
+     },
+     "eventType": 5,
+     "eventSize": 28,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "type": 2,
+     "value": 1
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 111,
+      "logPos": 699,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 111,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "INSERT INTO t_sbr (v) VALUES ('plain')"
+    },
+    {
+     "ctor": "XidEvent",
+     "eventHeader": {
+      "eventType": 16,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 730,
+      "flags": 0
+     },
+     "eventType": 16,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 809,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 78,
+      "logPos": 891,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 78,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    },
+    {
+     "ctor": "IntvarEvent",
+     "eventHeader": {
+      "eventType": 5,
+      "serverId": 1,
+      "eventSize": 28,
+      "logPos": 923,
+      "flags": 0
+     },
+     "eventType": 5,
+     "eventSize": 28,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "type": 1,
+     "value": 1
+    },
+    {
+     "ctor": "IntvarEvent",
+     "eventHeader": {
+      "eventType": 5,
+      "serverId": 1,
+      "eventSize": 28,
+      "logPos": 955,
+      "flags": 0
+     },
+     "eventType": 5,
+     "eventSize": 28,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "type": 2,
+     "value": 2
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 120,
+      "logPos": 1079,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 120,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "INSERT INTO t_sbr (v) VALUES (LAST_INSERT_ID())"
+    },
+    {
+     "ctor": "XidEvent",
+     "eventHeader": {
+      "eventType": 16,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 1110,
+      "flags": 0
+     },
+     "eventType": 16,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 1189,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 78,
+      "logPos": 1271,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 78,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    },
+    {
+     "ctor": "IntvarEvent",
+     "eventHeader": {
+      "eventType": 5,
+      "serverId": 1,
+      "eventSize": 28,
+      "logPos": 1303,
+      "flags": 0
+     },
+     "eventType": 5,
+     "eventSize": 28,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "type": 2,
+     "value": 3
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 130,
+      "logPos": 1437,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 130,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "INSERT INTO t_sbr (id, v) VALUES (NULL, 'a'), (NULL, 'b')"
+    },
+    {
+     "ctor": "XidEvent",
+     "eventHeader": {
+      "eventType": 16,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 1468,
+      "flags": 0
+     },
+     "eventType": 16,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    }
+   ]
+  },
+  "sbr_rand": {
+   "count": 11,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 148,
+      "logPos": 386,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 148,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_sbr (id INT AUTO_INCREMENT PRIMARY KEY, d DOUBLE)"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 465,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 78,
+      "logPos": 547,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 78,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    },
+    {
+     "ctor": "IntvarEvent",
+     "eventHeader": {
+      "eventType": 5,
+      "serverId": 1,
+      "eventSize": 28,
+      "logPos": 579,
+      "flags": 0
+     },
+     "eventType": 5,
+     "eventSize": 28,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "type": 2,
+     "value": 1
+    },
+    {
+     "ctor": "RandEvent",
+     "eventHeader": {
+      "eventType": 13,
+      "serverId": 1,
+      "eventSize": 35,
+      "logPos": 618,
+      "flags": 0
+     },
+     "eventType": 13,
+     "eventSize": 35,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 110,
+      "logPos": 732,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 110,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "INSERT INTO t_sbr (d) VALUES (RAND())"
+    },
+    {
+     "ctor": "XidEvent",
+     "eventHeader": {
+      "eventType": 16,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 763,
+      "flags": 0
+     },
+     "eventType": 16,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    }
+   ]
+  },
+  "user_var_string": {
+   "count": 8,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 152,
+      "logPos": 390,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 152,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_uv (id INT AUTO_INCREMENT PRIMARY KEY, v VARCHAR(60))"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 469,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 78,
+      "logPos": 551,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 78,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    },
+    {
+     "ctor": "IntvarEvent",
+     "eventHeader": {
+      "eventType": 5,
+      "serverId": 1,
+      "eventSize": 28,
+      "logPos": 583,
+      "flags": 0
+     },
+     "eventType": 5,
+     "eventSize": 28,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "type": 2,
+     "value": 1
+    }
+   ],
+   "error": "Buffer overrun"
+  },
+  "user_var_int": {
+   "count": 11,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 152,
+      "logPos": 390,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 152,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_uv (id INT AUTO_INCREMENT PRIMARY KEY, v VARCHAR(60))"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 469,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 78,
+      "logPos": 551,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 78,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    },
+    {
+     "ctor": "IntvarEvent",
+     "eventHeader": {
+      "eventType": 5,
+      "serverId": 1,
+      "eventSize": 28,
+      "logPos": 583,
+      "flags": 0
+     },
+     "eventType": 5,
+     "eventSize": 28,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "type": 2,
+     "value": 1
+    },
+    {
+     "ctor": "UserVarEvent",
+     "eventHeader": {
+      "eventType": 14,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 630,
+      "flags": 0
+     },
+     "eventType": 14,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nameLen": 1,
+     "name": "u",
+     "isNull": 0,
+     "typeToCodesAndMethod": {
+      "0": [
+       "STRING_RESULT",
+       null
+      ],
+      "1": [
+       "REAL_RESULT",
+       null
+      ],
+      "2": [
+       "INT_RESULT",
+       null
+      ],
+      "3": [
+       "ROW_RESULT",
+       null
+      ],
+      "4": [
+       "DECIMAL_RESULT",
+       null
+      ]
+     },
+     "value": 42,
+     "flags": 0,
+     "tempValueBuffer": {
+      "$buf": "2a00000000000000"
+     },
+     "type": 2,
+     "charset": 224,
+     "valueLen": 8
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 105,
+      "logPos": 739,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 105,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "INSERT INTO t_uv (v) VALUES (@u)"
+    },
+    {
+     "ctor": "XidEvent",
+     "eventHeader": {
+      "eventType": 16,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 770,
+      "flags": 0
+     },
+     "eventType": 16,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    }
+   ]
+  },
+  "user_var_real": {
+   "count": 8,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 152,
+      "logPos": 390,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 152,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_uv (id INT AUTO_INCREMENT PRIMARY KEY, v VARCHAR(60))"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 469,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 78,
+      "logPos": 551,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 78,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    },
+    {
+     "ctor": "IntvarEvent",
+     "eventHeader": {
+      "eventType": 5,
+      "serverId": 1,
+      "eventSize": 28,
+      "logPos": 583,
+      "flags": 0
+     },
+     "eventType": 5,
+     "eventSize": 28,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "type": 2,
+     "value": 1
+    }
+   ],
+   "error": "Buffer overrun"
+  },
+  "user_var_decimal": {
+   "count": 8,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 152,
+      "logPos": 390,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 152,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_uv (id INT AUTO_INCREMENT PRIMARY KEY, v VARCHAR(60))"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 469,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 78,
+      "logPos": 551,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 78,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    },
+    {
+     "ctor": "IntvarEvent",
+     "eventHeader": {
+      "eventType": 5,
+      "serverId": 1,
+      "eventSize": 28,
+      "logPos": 583,
+      "flags": 0
+     },
+     "eventType": 5,
+     "eventSize": 28,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "type": 2,
+     "value": 1
+    }
+   ],
+   "error": "Buffer overrun"
+  },
+  "user_var_null": {
+   "count": 11,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 152,
+      "logPos": 390,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 152,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_uv (id INT AUTO_INCREMENT PRIMARY KEY, v VARCHAR(60))"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 469,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 78,
+      "logPos": 551,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 78,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    },
+    {
+     "ctor": "IntvarEvent",
+     "eventHeader": {
+      "eventType": 5,
+      "serverId": 1,
+      "eventSize": 28,
+      "logPos": 583,
+      "flags": 0
+     },
+     "eventType": 5,
+     "eventSize": 28,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "type": 2,
+     "value": 1
+    },
+    {
+     "ctor": "UserVarEvent",
+     "eventHeader": {
+      "eventType": 14,
+      "serverId": 1,
+      "eventSize": 25,
+      "logPos": 612,
+      "flags": 0
+     },
+     "eventType": 14,
+     "eventSize": 25,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nameLen": 1,
+     "name": "u",
+     "isNull": 1,
+     "typeToCodesAndMethod": {
+      "0": [
+       "STRING_RESULT",
+       null
+      ],
+      "1": [
+       "REAL_RESULT",
+       null
+      ],
+      "2": [
+       "INT_RESULT",
+       null
+      ],
+      "3": [
+       "ROW_RESULT",
+       null
+      ],
+      "4": [
+       "DECIMAL_RESULT",
+       null
+      ]
+     },
+     "value": null,
+     "flags": null,
+     "tempValueBuffer": {
+      "$buf": ""
+     },
+     "type": null,
+     "charset": null,
+     "valueLen": null
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 105,
+      "logPos": 721,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 105,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "INSERT INTO t_uv (v) VALUES (@u)"
+    },
+    {
+     "ctor": "XidEvent",
+     "eventHeader": {
+      "eventType": 16,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 752,
+      "flags": 0
+     },
+     "eventType": 16,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    }
+   ]
+  },
+  "load_data": {
+   "count": 10,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 139,
+      "logPos": 377,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 139,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_load (id INT PRIMARY KEY, v VARCHAR(20))"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 456,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 78,
+      "logPos": 538,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 78,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    },
+    {
+     "ctor": "BeginLoadQueryEvent",
+     "eventHeader": {
+      "eventType": 17,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 585,
+      "flags": 0
+     },
+     "eventType": 17,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "fileId": 1,
+     "blockData": {
+      "$buf": "31096f6e650a320974776f0a330974687265650a"
+     }
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 18,
+      "serverId": 1,
+      "eventSize": 240,
+      "logPos": 829,
+      "flags": 0
+     },
+     "eventType": 18,
+     "eventSize": 240,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "XidEvent",
+     "eventHeader": {
+      "eventType": 16,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 860,
+      "flags": 0
+     },
+     "eventType": 16,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    }
+   ]
+  },
+  "rotate": {
+   "count": 7,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 123,
+      "logPos": 361,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 123,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_rot (id INT PRIMARY KEY)"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 440,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 71,
+      "logPos": 515,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 71,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 29,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    }
+   ],
+   "error": "this.packet.readVariableLengthString is not a function"
+  },
+  "gtid": {
+   "count": 19,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 204,
+      "flags": 0
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000002"
+    },
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000002"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 204,
+      "flags": 0
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000003"
+    },
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000003"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 204,
+      "flags": 0
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000004"
+    },
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000004"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "GtidEvent",
+     "eventHeader": {
+      "eventType": 33,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 33,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "<server_uuid_hex>"
+     },
+     "gno": 1,
+     "ltType": 2
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 124,
+      "logPos": 362,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 124,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_gtid (id INT PRIMARY KEY)"
+    },
+    {
+     "ctor": "GtidEvent",
+     "eventHeader": {
+      "eventType": 33,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 441,
+      "flags": 0
+     },
+     "eventType": 33,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "<server_uuid_hex>"
+     },
+     "gno": 2,
+     "ltType": 2
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 71,
+      "logPos": 516,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 71,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 29,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    }
+   ],
+   "error": "this.packet.readVariableLengthString is not a function"
+  },
+  "stop": {
+   "count": 7,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 124,
+      "logPos": 362,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 124,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_stop (id INT PRIMARY KEY)"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 441,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 71,
+      "logPos": 516,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 71,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 29,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    }
+   ],
+   "error": "this.packet.readVariableLengthString is not a function"
+  },
+  "heartbeat": {
+   "count": 7,
+   "events": [
+    {
+     "ctor": "RotateEvent",
+     "eventHeader": {
+      "eventType": 4,
+      "serverId": 1,
+      "eventSize": 43,
+      "logPos": 0,
+      "flags": 32
+     },
+     "eventType": 4,
+     "eventSize": 43,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "position": 4,
+     "nextBinlog": "mysql-bin.000001"
+    },
+    {
+     "ctor": "FormatDescriptionEvent",
+     "eventHeader": {
+      "eventType": 15,
+      "serverId": 1,
+      "eventSize": 118,
+      "logPos": 126,
+      "flags": 0
+     },
+     "eventType": 15,
+     "eventSize": 118,
+     "mysqlVersion": [
+      8,
+      0,
+      46
+     ],
+     "dbms": "mysql",
+     "binlogVersion": 4,
+     "mysqlVersionStr": "8.0.46",
+     "commonHeaderLen": 19,
+     "postHeaderLen": [
+      0,
+      13,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0,
+      98,
+      0,
+      4,
+      26,
+      8,
+      0,
+      0,
+      0,
+      8,
+      8,
+      8,
+      2,
+      0,
+      0,
+      0,
+      10,
+      10,
+      10,
+      42,
+      42,
+      0,
+      18,
+      52,
+      0,
+      10,
+      40,
+      0,
+      1
+     ]
+    },
+    {
+     "ctor": "PreviousGtidsEvent",
+     "eventHeader": {
+      "eventType": 35,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 157,
+      "flags": 128
+     },
+     "eventType": 35,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nSid": 0,
+     "gtids": [],
+     "previousGtids": ""
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 73,
+      "logPos": 234,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 73,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 122,
+      "logPos": 360,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 122,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 47,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "sqlRequirePrimaryKey": 0,
+     "schema": "test",
+     "query": "CREATE TABLE t_hb (id INT PRIMARY KEY)"
+    },
+    {
+     "ctor": "NotImplementedEvent",
+     "eventHeader": {
+      "eventType": 34,
+      "serverId": 1,
+      "eventSize": 75,
+      "logPos": 439,
+      "flags": 0
+     },
+     "eventType": 34,
+     "eventSize": 75,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 71,
+      "logPos": 514,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 71,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 29,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    }
+   ],
+   "error": "this.packet.readVariableLengthString is not a function"
+  }
+ }
+}
