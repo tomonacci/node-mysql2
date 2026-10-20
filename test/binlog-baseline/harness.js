@@ -5,6 +5,7 @@ process.env.TZ = 'UTC';
 // usage: node harness.js <repoRoot> <out.json> [minimal|full] [baseline.json]
 // Needs a MySQL 8.0 server with the binlog enabled in ROW format, started with
 // --restart=unless-stopped because the `stop` scenario issues SHUTDOWN.
+// Also writes <out>.raw.json with unmasked values for check.js.
 // BINLOG_PORT (default 3399); BINLOG_SERVER=mariadb runs the MariaDB scenarios (the caller must SET @mariadb_slave_capability=4, as done here); BINLOG_SKIP_STOP=1 skips `stop`; QUIET=1 hides coverage.
 const path = require('path');
 const fs = require('fs');
@@ -16,38 +17,7 @@ const { Readable } = require('stream');
 const mysql = require(root + '/index.js');
 const cfg = { host: '127.0.0.1', port: Number(process.env.BINLOG_PORT || 3399), user: 'root', database: 'test' };
 
-const typeCases = {
-  tinyint: ['TINYINT', ['-5', '127', 'NULL']],
-  utinyint: ['TINYINT UNSIGNED', ['250', '0', 'NULL']],
-  smallint: ['SMALLINT', ['-300', '32767', 'NULL']],
-  mediumint: ['MEDIUMINT', ['-70000', '8388607', 'NULL']],
-  int: ['INT', ['-2000000000', '2147483647', 'NULL']],
-  bigint: ['BIGINT', ['-9007199254740993', '9223372036854775807', 'NULL']],
-  ubigint: ['BIGINT UNSIGNED', ['18446744073709551615', '0', 'NULL']],
-  float: ['FLOAT', ['1.5', '-0.25', 'NULL']],
-  double: ['DOUBLE', ['2.25', '-1e100', 'NULL']],
-  decimal: ['DECIMAL(20,5)', ["'123456789012345.12345'", "'-0.00001'", 'NULL']],
-  decimal_small: ['DECIMAL(5,2)', ["'-12.50'", "'0'", 'NULL']],
-  char: ['CHAR(10)', ["'abc'", "''", 'NULL']],
-  varchar: ['VARCHAR(300)', ["'héllo wörld'", "''", 'NULL']],
-  varchar_long: ['VARCHAR(1000)', ["REPEAT('é',400)", "'x'", 'NULL']],
-  text: ['TEXT', ["'long text'", "''", 'NULL']],
-  blob: ['BLOB', ["'blobdata'", "''", 'NULL']],
-  binary: ['BINARY(4)', ["'ab'", "'abcd'", 'NULL']],
-  varbinary: ['VARBINARY(20)', ["'vb'", "''", 'NULL']],
-  date: ['DATE', ["'2024-02-29'", "'1000-01-01'", 'NULL']],
-  time: ['TIME', ["'-12:34:56'", "'838:59:59'", 'NULL']],
-  time3: ['TIME(3)', ["'01:02:03.456'", "'00:00:00.000'", 'NULL']],
-  datetime: ['DATETIME', ["'2024-02-29 12:34:56'", "'1000-01-01 00:00:00'", 'NULL']],
-  datetime6: ['DATETIME(6)', ["'2024-02-29 12:34:56.123456'", "'1000-01-01 00:00:00.000000'", 'NULL']],
-  timestamp: ['TIMESTAMP NULL', ["'2024-02-29 12:34:56'", "'1970-01-01 00:00:01'", 'NULL']],
-  timestamp3: ['TIMESTAMP(3) NULL', ["'2024-02-29 12:34:56.789'", "'1970-01-01 00:00:01.000'", 'NULL']],
-  year: ['YEAR', ['2024', '1901', 'NULL']],
-  enum: ["ENUM('a','b','c')", ["'b'", "'c'", 'NULL']],
-  set: ["SET('x','y','z')", ["'x,z'", "''", 'NULL']],
-  bit: ['BIT(12)', ["b'101010101010'", "b'0'", 'NULL']],
-  json: ['JSON', [`'{"k":[1,2,{"n":null}],"s":"v"}'`, "'[]'", 'NULL']],
-};
+const typeCases = require('./type-cases.js');
 
 function norm(v, asTimeOfDay) {
   if (typeof v === 'bigint') return { $bigint: v.toString() };
@@ -333,7 +303,7 @@ function runStep(c, step) {
 
 async function runScenario(spec) {
   const def = Array.isArray(spec) ? { steps: spec } : spec;
-  if (def.restart && process.env.BINLOG_SKIP_STOP) return { skipped: true };
+  if (def.restart && process.env.BINLOG_SKIP_STOP) return { result: { skipped: true }, raw: { skipped: true } };
 
   const admin = mysql.createConnection(cfg).promise();
   if (!isMariaDb) {
@@ -391,8 +361,14 @@ async function runScenario(spec) {
     await t.query(sql);
     await t.end();
   }
-  const dump = maskServerUuid(events.map(serialize), uuid);
-  return error ? { count: dump.length, events: dump, error } : { count: dump.length, events: dump };
+  // A failed lazy decode leaves the event reporting no rows on the next access,
+  // so each event's rows are decoded exactly once, after its fields are captured.
+  const decoded = events.map((e) => ({ own: snapshot(e), ...decodeRows(e) }));
+  const dump = maskServerUuid(events.map((e, i) => serialize(e, decoded[i])), uuid);
+  const raw = maskServerUuid(events.map((e, i) => serialize(e, decoded[i], true)), uuid);
+  const result = { count: dump.length, events: dump };
+  if (error) result.error = error;
+  return { result, raw: { count: raw.length, events: raw, ...(error && { error }) } };
 }
 
 // Decoders known to read past the row and return garbage; only their shape is stable.
@@ -420,16 +396,35 @@ function maskServerUuid(dump, uuid) {
   return JSON.parse(text);
 }
 
-function serialize(e) {
-  const o = { ctor: e.constructor && e.constructor.name };
-  for (const k of Object.keys(e)) o[k] = norm(e[k]);
-  // Row events decode lazily through a getter.
-  if ('rows' in e) {
-    try {
-      o.rows = UNSTABLE_TABLES.has(e.table) ? `<${e.rows.length} rows, unstable>` : norm(e.rows, TIME_TABLES.has(e.table));
-    } catch (err) {
-      o.rowsError = err.message;
-    }
+function snapshot(e) {
+  const own = {};
+  for (const k of Object.keys(e)) own[k] = norm(e[k]);
+  return own;
+}
+
+function decodeRows(e) {
+  if (!('rows' in e)) return {};
+  try {
+    return { rows: e.rows };
+  } catch (err) {
+    return { rowsError: err.message };
+  }
+}
+
+// The raw form keeps every decoded value, including those the comparable form
+// masks, so it can be checked against expected values.
+function serialize(e, { own, rows, rowsError }, raw = false) {
+  const o = { ctor: e.constructor && e.constructor.name, ...own };
+  if (rowsError) o.rowsError = rowsError;
+  else if (rows) {
+    o.rows = !raw && UNSTABLE_TABLES.has(e.table)
+      ? `<${rows.length} rows, unstable>`
+      : norm(rows, !raw && TIME_TABLES.has(e.table));
+  }
+  if (raw) {
+    delete o.packet;
+    delete o.tableMap;
+    return o;
   }
   const stripped = strip(o);
   // The compressed payload's size depends on the timestamps inside it.
@@ -478,12 +473,14 @@ function printCoverage(result) {
 
 async function main() {
   const result = { scenarios: {} };
+  const rawResult = { scenarios: {} };
   const only = process.env.ONLY && process.env.ONLY.split(',');
   for (const [name, spec] of Object.entries(scenarios)) {
     if (only && !only.includes(name)) continue;
-    result.scenarios[name] = await runScenario(spec);
+    ({ result: result.scenarios[name], raw: rawResult.scenarios[name] } = await runScenario(spec));
   }
   fs.writeFileSync(out, JSON.stringify(result, null, 1));
+  fs.writeFileSync(out.replace(/\.json$/, '') + '.raw.json', JSON.stringify(rawResult, null, 1));
   for (const [name, sc] of Object.entries(result.scenarios)) {
     console.log(name.padEnd(13), sc.skipped ? 'skipped' : `${sc.count} events`, sc.error ? `ERROR: ${sc.error}` : '');
   }
