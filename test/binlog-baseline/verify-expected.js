@@ -17,10 +17,15 @@ const norm = (v) => {
 };
 
 (async () => {
-  const c = mysql.createConnection({
-    host: '127.0.0.1', port: Number(process.env.BINLOG_PORT || 3399), user: 'root',
-    supportBigNumbers: true, bigNumberStrings: true,
-  }).promise();
+  const c = mysql
+    .createConnection({
+      host: '127.0.0.1',
+      port: Number(process.env.BINLOG_PORT || 3399),
+      user: 'root',
+      supportBigNumbers: true,
+      bigNumberStrings: true,
+    })
+    .promise();
   await c.query('DROP DATABASE IF EXISTS verify_expected');
   await c.query('CREATE DATABASE verify_expected');
   await c.query('USE verify_expected');
@@ -28,18 +33,29 @@ const norm = (v) => {
   let bad = 0;
   for (const [name, [type, vals]] of Object.entries(typeCases)) {
     await c.query(`CREATE TABLE t_${name} (id INT PRIMARY KEY, v ${type})`);
-    await c.query(`INSERT INTO t_${name} VALUES ${vals.map((v, i) => `(${i + 1}, ${v})`).join(',')}`);
+    await c.query(
+      `INSERT INTO t_${name} VALUES ${vals.map((v, i) => `(${i + 1}, ${v})`).join(',')}`
+    );
     const [rows] = await c.query(`SELECT v FROM t_${name} ORDER BY id`);
     const specs = typeExpectations[name].rows;
     specs.forEach((s, i) => {
       if (!matches(s, norm(rows[i].v))) {
         bad++;
-        console.log(`t_${name} row ${i + 1}: expectation ${s.desc} rejects the server's ${JSON.stringify(norm(rows[i].v))}`);
+        console.log(
+          `t_${name} row ${i + 1}: expectation ${s.desc} rejects the server's ${JSON.stringify(norm(rows[i].v))}`
+        );
       }
     });
   }
   await c.query('DROP DATABASE verify_expected');
   await c.end();
-  console.log(bad ? `${bad} expectation(s) disagree with the server` : `all ${Object.keys(typeCases).length} type expectations agree with the server`);
+  console.log(
+    bad
+      ? `${bad} expectation(s) disagree with the server`
+      : `all ${Object.keys(typeCases).length} type expectations agree with the server`
+  );
   process.exit(bad ? 1 : 0);
-})().catch((e) => { console.error(e); process.exit(1); });
+})().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

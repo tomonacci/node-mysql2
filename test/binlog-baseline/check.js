@@ -15,7 +15,9 @@ if (!rawPath) {
 }
 const update = process.argv.includes('--update');
 const knownPath = path.join(__dirname, 'expected-failures.json');
-const known = new Set(fs.existsSync(knownPath) ? JSON.parse(fs.readFileSync(knownPath, 'utf8')) : []);
+const known = new Set(
+  fs.existsSync(knownPath) ? JSON.parse(fs.readFileSync(knownPath, 'utf8')) : []
+);
 const scenarios = JSON.parse(fs.readFileSync(rawPath, 'utf8')).scenarios;
 
 const results = [];
@@ -37,10 +39,14 @@ const fixed = results.filter((r) => r.ok && known.has(r.id));
 const stillFailing = failing.filter((r) => known.has(r.id));
 const unrun = [...known].filter((id) => !results.some((r) => r.id === id));
 
-console.log(`${results.length} checks: ${results.length - failing.length} pass, ${stillFailing.length} known failures, ${regressions.length} new failures`);
-if (process.env.VERBOSE) for (const r of stillFailing) console.log(`  known  ${r.id}: ${r.detail}`);
+console.log(
+  `${results.length} checks: ${results.length - failing.length} pass, ${stillFailing.length} known failures, ${regressions.length} new failures`
+);
+if (process.env.VERBOSE)
+  for (const r of stillFailing) console.log(`  known  ${r.id}: ${r.detail}`);
 for (const r of regressions) console.log(`  FAIL   ${r.id}: ${r.detail}`);
-for (const r of fixed) console.log(`  FIXED  ${r.id} (remove from expected-failures.json)`);
+for (const r of fixed)
+  console.log(`  FIXED  ${r.id} (remove from expected-failures.json)`);
 if (unrun.length) console.log(`  not run (scenario absent): ${unrun.length}`);
 
 if (update) {

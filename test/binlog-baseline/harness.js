@@ -14,8 +14,13 @@ const out = process.argv[3];
 const baselinePath = process.argv[5];
 const mode = (process.argv[4] || 'minimal').toUpperCase();
 const { Readable } = require('stream');
-const mysql = require(root + '/index.js');
-const cfg = { host: '127.0.0.1', port: Number(process.env.BINLOG_PORT || 3399), user: 'root', database: 'test' };
+const mysql = require(`${root}/index.js`);
+const cfg = {
+  host: '127.0.0.1',
+  port: Number(process.env.BINLOG_PORT || 3399),
+  user: 'root',
+  database: 'test',
+};
 
 const typeCases = require('./type-cases.js');
 
@@ -26,7 +31,14 @@ function norm(v) {
     if (isNaN(v)) return { $date: 'invalid' };
     return { $date: v.toISOString() };
   }
-  if (v && typeof v === 'object' && typeof v.toString === 'function' && v.constructor && v.constructor.name === 'Long') return { $long: v.toString() };
+  if (
+    v &&
+    typeof v === 'object' &&
+    typeof v.toString === 'function' &&
+    v.constructor &&
+    v.constructor.name === 'Long'
+  )
+    return { $long: v.toString() };
   if (Array.isArray(v)) return v.map(norm);
   if (v && typeof v === 'object') {
     const o = {};
@@ -36,7 +48,6 @@ function norm(v) {
   if (typeof v === 'number' && !Number.isFinite(v)) return { $num: String(v) };
   return v;
 }
-
 
 const typeSteps = Object.entries(typeCases).flatMap(([name, [type, vals]]) => [
   `CREATE TABLE t_${name} (id INT PRIMARY KEY, v ${type})`,
@@ -132,7 +143,13 @@ const mysqlScenarios = {
     'INSERT INTO t_sbr (d) VALUES (RAND())',
   ],
   ...Object.fromEntries(
-    Object.entries({ string: `'abc'`, int: '42', real: '1.5e0', decimal: '1.25', null: 'NULL' }).map(([kind, value]) => [
+    Object.entries({
+      string: `'abc'`,
+      int: '42',
+      real: '1.5e0',
+      decimal: '1.25',
+      null: 'NULL',
+    }).map(([kind, value]) => [
       `user_var_${kind}`,
       [
         "SET SESSION binlog_format='STATEMENT'",
@@ -145,7 +162,10 @@ const mysqlScenarios = {
   load_data: [
     "SET SESSION binlog_format='STATEMENT'",
     'CREATE TABLE t_load (id INT PRIMARY KEY, v VARCHAR(20))',
-    { sql: "LOAD DATA LOCAL INFILE 'rows.tsv' INTO TABLE t_load (id, v)", infile: '1\tone\n2\ttwo\n3\tthree\n' },
+    {
+      sql: "LOAD DATA LOCAL INFILE 'rows.tsv' INTO TABLE t_load (id, v)",
+      infile: '1\tone\n2\ttwo\n3\tthree\n',
+    },
   ],
   rotate: [
     'CREATE TABLE t_rot (id INT PRIMARY KEY)',
@@ -170,20 +190,29 @@ const mysqlScenarios = {
     after: gtidDown,
   },
   stop: {
-    steps: ['CREATE TABLE t_stop (id INT PRIMARY KEY)', 'INSERT INTO t_stop VALUES (1)'],
+    steps: [
+      'CREATE TABLE t_stop (id INT PRIMARY KEY)',
+      'INSERT INTO t_stop VALUES (1)',
+    ],
     restart: true,
   },
   heartbeat: {
-    steps: ['CREATE TABLE t_hb (id INT PRIMARY KEY)', 'INSERT INTO t_hb VALUES (1)'],
+    steps: [
+      'CREATE TABLE t_hb (id INT PRIMARY KEY)',
+      'INSERT INTO t_hb VALUES (1)',
+    ],
     untilHeartbeat: true,
   },
 };
 
-
 // MariaDB marks every logged DDL with a status variable the driver cannot decode
 // (0x81, Q_XID), so tables are created unlogged to keep the DML scenarios usable.
 const SETTLE = { settle: true };
-const unloggedDdl = (...ddl) => ['SET SESSION sql_log_bin=0', ...ddl, 'SET SESSION sql_log_bin=1'];
+const unloggedDdl = (...ddl) => [
+  'SET SESSION sql_log_bin=0',
+  ...ddl,
+  'SET SESSION sql_log_bin=1',
+];
 
 const mariadbScenarios = {
   maria_dml: {
@@ -199,7 +228,9 @@ const mariadbScenarios = {
   },
   maria_types: {
     steps: [
-      ...unloggedDdl('CREATE TABLE t_mt (id INT PRIMARY KEY, a TINYINT UNSIGNED, b BIGINT, c VARCHAR(30), d DATE, e DATETIME, f DECIMAL(10,2), g JSON, h BLOB)'),
+      ...unloggedDdl(
+        'CREATE TABLE t_mt (id INT PRIMARY KEY, a TINYINT UNSIGNED, b BIGINT, c VARCHAR(30), d DATE, e DATETIME, f DECIMAL(10,2), g JSON, h BLOB)'
+      ),
       `INSERT INTO t_mt VALUES (1, 250, -9007199254740993, 'héllo', '2024-02-29', '2024-02-29 12:34:56', '12.50', '{"k":[1,2]}', 'blob')`,
     ],
   },
@@ -218,7 +249,10 @@ const mariadbScenarios = {
     ],
   },
   maria_ddl: {
-    steps: ['CREATE TABLE t_md (id INT PRIMARY KEY)', 'INSERT INTO t_md VALUES (1)'],
+    steps: [
+      'CREATE TABLE t_md (id INT PRIMARY KEY)',
+      'INSERT INTO t_md VALUES (1)',
+    ],
   },
   maria_no_annotate: {
     steps: [
@@ -243,7 +277,7 @@ async function currentBinlogFile() {
     } finally {
       await c.end();
     }
-  } catch (e) {
+  } catch {
     return null;
   }
 }
@@ -252,8 +286,16 @@ async function currentBinlogFile() {
 // accepting connections for a moment, so connectivity alone proves nothing.
 async function restartServer(c) {
   const before = await currentBinlogFile();
-  try { await c.query('SHUTDOWN'); } catch (e) { /* connection drops */ }
-  try { c.destroy(); } catch (e) { /* already gone */ }
+  try {
+    await c.query('SHUTDOWN');
+  } catch {
+    /* connection drops */
+  }
+  try {
+    c.destroy();
+  } catch {
+    /* already gone */
+  }
   for (let i = 0; i < 180; i++) {
     const now = await currentBinlogFile();
     if (now && now !== before) return;
@@ -267,7 +309,9 @@ const SEND_ANNOTATE_ROWS = 0x02;
 
 function dumpFlags(def) {
   if (def.untilHeartbeat) return 0;
-  return isMariaDb && !def.noAnnotate ? NON_BLOCK | SEND_ANNOTATE_ROWS : NON_BLOCK;
+  return isMariaDb && !def.noAnnotate
+    ? NON_BLOCK | SEND_ANNOTATE_ROWS
+    : NON_BLOCK;
 }
 
 async function totalLoggedEvents(c) {
@@ -293,23 +337,30 @@ async function waitUntilLogsSettle(c) {
   }
 }
 
-
 function runStep(c, step) {
   if (step === SETTLE) return waitUntilLogsSettle(c);
   if (typeof step === 'string') return c.query(step);
-  return c.query({ sql: step.sql, infileStreamFactory: () => Readable.from([Buffer.from(step.infile)]) });
+  return c.query({
+    sql: step.sql,
+    infileStreamFactory: () => Readable.from([Buffer.from(step.infile)]),
+  });
 }
 
 async function runScenario(spec) {
   const def = Array.isArray(spec) ? { steps: spec } : spec;
-  if (def.restart && process.env.BINLOG_SKIP_STOP) return { result: { skipped: true }, raw: { skipped: true } };
+  if (def.restart && process.env.BINLOG_SKIP_STOP)
+    return { result: { skipped: true }, raw: { skipped: true } };
 
   const admin = mysql.createConnection(cfg).promise();
   await admin.query(`SET GLOBAL binlog_row_metadata='${mode}'`);
   if (!isMariaDb) {
     await admin.query('SET GLOBAL local_infile=1');
     for (const sql of gtidDown) {
-      try { await admin.query(sql); } catch (e) { /* already off */ }
+      try {
+        await admin.query(sql);
+      } catch {
+        /* already off */
+      }
     }
   }
   await admin.end();
@@ -320,7 +371,9 @@ async function runScenario(spec) {
   await c.query('USE test');
   await c.query('RESET MASTER');
   const [[st]] = await c.query('SHOW MASTER STATUS');
-  const uuid = isMariaDb ? null : (await c.query('SELECT @@server_uuid AS uuid'))[0][0].uuid;
+  const uuid = isMariaDb
+    ? null
+    : (await c.query('SELECT @@server_uuid AS uuid'))[0][0].uuid;
   for (const sql of def.before || []) await c.query(sql);
   for (const step of def.steps) await runStep(c, step);
   if (def.restart) {
@@ -334,13 +387,23 @@ async function runScenario(spec) {
   const events = [];
   let error;
   try {
-    if (def.untilHeartbeat) await bc.promise().query('SET @master_heartbeat_period=100000000');
+    if (def.untilHeartbeat)
+      await bc.promise().query('SET @master_heartbeat_period=100000000');
     const stream = await bc.promise().createBinlogStream({
-      serverId: 4242, filename: st.File, binlogPos: 4, flags: dumpFlags(def),
+      serverId: 4242,
+      filename: st.File,
+      binlogPos: 4,
+      flags: dumpFlags(def),
     });
     await new Promise((resolve, reject) => {
-      const timer = setTimeout(() => reject(new Error(`timeout; got ${events.length} events`)), 20000);
-      const finish = (fn, arg) => { clearTimeout(timer); fn(arg); };
+      const timer = setTimeout(
+        () => reject(new Error(`timeout; got ${events.length} events`)),
+        20000
+      );
+      const finish = (fn, arg) => {
+        clearTimeout(timer);
+        fn(arg);
+      };
       stream.on('data', (e) => {
         events.push(e);
         if (def.untilHeartbeat && e.eventType === 0x1b) finish(resolve);
@@ -352,7 +415,11 @@ async function runScenario(spec) {
   } catch (e) {
     error = e.message;
   }
-  try { bc.destroy(); } catch (e) { /* already gone */ }
+  try {
+    bc.destroy();
+  } catch {
+    /* already gone */
+  }
   // The server refuses to dump GTID events once gtid_mode is OFF again.
   for (const sql of def.after || []) {
     const t = mysql.createConnection(cfg).promise();
@@ -362,19 +429,51 @@ async function runScenario(spec) {
   // A failed lazy decode leaves the event reporting no rows on the next access,
   // so each event's rows are decoded exactly once, after its fields are captured.
   const decoded = events.map((e) => ({ own: snapshot(e), ...decodeRows(e) }));
-  const dump = maskServerUuid(events.map((e, i) => serialize(e, decoded[i])), uuid);
-  const raw = maskServerUuid(events.map((e, i) => serialize(e, decoded[i], true)), uuid);
+  const dump = maskServerUuid(
+    events.map((e, i) => serialize(e, decoded[i])),
+    uuid
+  );
+  const raw = maskServerUuid(
+    events.map((e, i) => serialize(e, decoded[i], true)),
+    uuid
+  );
   const result = { count: dump.length, events: dump };
   if (error) result.error = error;
-  return { result, raw: { count: raw.length, events: raw, ...(error && { error }) } };
+  return {
+    result,
+    raw: { count: raw.length, events: raw, ...(error && { error }) },
+  };
 }
 
 // Fields that vary between runs or only expose raw wire bytes.
-const VOLATILE = new Set(['packet', 'created', 'slaveProxyId', 'xid', 'ddlXid', 'tableId', 'table_id', 'timestamp', 'executionTime', 'tableMap', 'seed1', 'seed2', 'payload', 'payloadSize', 'uncompressedSize']);
+const VOLATILE = new Set([
+  'packet',
+  'created',
+  'slaveProxyId',
+  'xid',
+  'ddlXid',
+  'tableId',
+  'table_id',
+  'timestamp',
+  'executionTime',
+  'tableMap',
+  'seed1',
+  'seed2',
+  'payload',
+  'payloadSize',
+  'uncompressedSize',
+]);
 
 function strip(v) {
   if (Array.isArray(v)) return v.map(strip);
-  if (v && typeof v === 'object' && !v.$buf && !v.$bigint && !v.$date && !v.$long) {
+  if (
+    v &&
+    typeof v === 'object' &&
+    !v.$buf &&
+    !v.$bigint &&
+    !v.$date &&
+    !v.$long
+  ) {
     const o = {};
     for (const k of Object.keys(v)) if (!VOLATILE.has(k)) o[k] = strip(v[k]);
     return o;
@@ -385,8 +484,10 @@ function strip(v) {
 function maskServerUuid(dump, uuid) {
   if (!uuid) return dump;
   const text = JSON.stringify(dump)
-    .split(uuid).join('<server_uuid>')
-    .split(uuid.replace(/-/g, '')).join('<server_uuid_hex>');
+    .split(uuid)
+    .join('<server_uuid>')
+    .split(uuid.replace(/-/g, ''))
+    .join('<server_uuid_hex>');
   return JSON.parse(text);
 }
 
@@ -428,13 +529,31 @@ function serialize(e, { own, rows, rowsError }, raw = false) {
 }
 
 const UNREACHABLE = {
-  0x00: 'never sent', 0x01: 'pre-4.0 servers', 0x06: 'pre-5.0 servers', 0x07: 'internal',
-  0x08: 'pre-5.0 servers', 0x09: 'pre-5.0 servers', 0x0a: 'pre-5.0 servers', 0x0b: 'pre-5.0 servers', 0x0c: 'pre-5.0 servers',
-  0x14: 'pre-5.1 servers', 0x15: 'pre-5.1 servers', 0x16: 'pre-5.1 servers',
-  0x17: 'MariaDB (BINLOG_SERVER=mariadb) or MySQL < 5.6.6', 0x18: 'MariaDB (BINLOG_SERVER=mariadb) or MySQL < 5.6.6', 0x19: 'MariaDB (BINLOG_SERVER=mariadb) or MySQL < 5.6.6',
-  0x1a: 'needs a server fault (lost events)', 0x1c: 'only newer-server extensions',
-  0x29: 'not sent by 8.0', 0x2a: 'MySQL 8.4+ tagged GTIDs', 0x2b: 'sentinel',
-  0xa0: 'MariaDB only', 0xa1: 'MariaDB only', 0xa2: 'MariaDB only', 0xa3: 'MariaDB only', 0xa4: 'MariaDB only, needs the encryption plugin and a key file',
+  0x00: 'never sent',
+  0x01: 'pre-4.0 servers',
+  0x06: 'pre-5.0 servers',
+  0x07: 'internal',
+  0x08: 'pre-5.0 servers',
+  0x09: 'pre-5.0 servers',
+  0x0a: 'pre-5.0 servers',
+  0x0b: 'pre-5.0 servers',
+  0x0c: 'pre-5.0 servers',
+  0x14: 'pre-5.1 servers',
+  0x15: 'pre-5.1 servers',
+  0x16: 'pre-5.1 servers',
+  0x17: 'MariaDB (BINLOG_SERVER=mariadb) or MySQL < 5.6.6',
+  0x18: 'MariaDB (BINLOG_SERVER=mariadb) or MySQL < 5.6.6',
+  0x19: 'MariaDB (BINLOG_SERVER=mariadb) or MySQL < 5.6.6',
+  0x1a: 'needs a server fault (lost events)',
+  0x1c: 'only newer-server extensions',
+  0x29: 'not sent by 8.0',
+  0x2a: 'MySQL 8.4+ tagged GTIDs',
+  0x2b: 'sentinel',
+  0xa0: 'MariaDB only',
+  0xa1: 'MariaDB only',
+  0xa2: 'MariaDB only',
+  0xa3: 'MariaDB only',
+  0xa4: 'MariaDB only, needs the encryption plugin and a key file',
 };
 
 function printCoverage(result) {
@@ -442,21 +561,41 @@ function printCoverage(result) {
   const seen = {};
   for (const [name, sc] of Object.entries(result.scenarios)) {
     for (const e of sc.events || []) {
-      const s = (seen[e.eventType] = seen[e.eventType] || { n: 0, by: new Set(), cls: new Set() });
-      s.n++; s.by.add(name); s.cls.add(e.ctor);
+      const s = (seen[e.eventType] = seen[e.eventType] || {
+        n: 0,
+        by: new Set(),
+        cls: new Set(),
+      });
+      s.n++;
+      s.by.add(name);
+      s.cls.add(e.ctor);
     }
   }
   const hex = (v) => `0x${v.toString(16).padStart(2, '0')}`;
   const missing = [];
-  const MARIADB_CODES = new Set([0x02, 0x04, 0x0e, 0x0f, 0x10, 0x13, 0x17, 0x18, 0x19, 0xa0, 0xa1, 0xa2, 0xa3, 0xa4]);
+  const MARIADB_CODES = new Set([
+    0x02, 0x04, 0x0e, 0x0f, 0x10, 0x13, 0x17, 0x18, 0x19, 0xa0, 0xa1, 0xa2,
+    0xa3, 0xa4,
+  ]);
   const known = Object.entries(T)
-    .filter(([k, v]) => typeof v === 'number' && /_EVENT|_LOG/.test(k) && !/^INTVAR_.+_EVENT$/.test(k))
+    .filter(
+      ([k, v]) =>
+        typeof v === 'number' &&
+        /_EVENT|_LOG/.test(k) &&
+        !/^INTVAR_.+_EVENT$/.test(k)
+    )
     .filter(([, v]) => !isMariaDb || MARIADB_CODES.has(v))
     .sort((a, b) => a[1] - b[1]);
   for (const [k, v] of known) {
     const s = seen[v];
-    if (s) console.log(`${hex(v)} ${k.padEnd(30)} x${String(s.n).padEnd(4)} ${[...s.cls].join(',')}  [${[...s.by].join(',')}]`);
-    else missing.push(`${hex(v)} ${k.padEnd(30)} ${UNREACHABLE[v] || 'NOT COVERED'}`);
+    if (s)
+      console.log(
+        `${hex(v)} ${k.padEnd(30)} x${String(s.n).padEnd(4)} ${[...s.cls].join(',')}  [${[...s.by].join(',')}]`
+      );
+    else
+      missing.push(
+        `${hex(v)} ${k.padEnd(30)} ${UNREACHABLE[v] || 'NOT COVERED'}`
+      );
   }
   console.log('--- not produced:');
   missing.forEach((m) => console.log(m));
@@ -468,12 +607,20 @@ async function main() {
   const only = process.env.ONLY && process.env.ONLY.split(',');
   for (const [name, spec] of Object.entries(scenarios)) {
     if (only && !only.includes(name)) continue;
-    ({ result: result.scenarios[name], raw: rawResult.scenarios[name] } = await runScenario(spec));
+    ({ result: result.scenarios[name], raw: rawResult.scenarios[name] } =
+      await runScenario(spec));
   }
   fs.writeFileSync(out, JSON.stringify(result, null, 1));
-  fs.writeFileSync(out.replace(/\.json$/, '') + '.raw.json', JSON.stringify(rawResult, null, 1));
+  fs.writeFileSync(
+    `${out.replace(/\.json$/, '')}.raw.json`,
+    JSON.stringify(rawResult, null, 1)
+  );
   for (const [name, sc] of Object.entries(result.scenarios)) {
-    console.log(name.padEnd(13), sc.skipped ? 'skipped' : `${sc.count} events`, sc.error ? `ERROR: ${sc.error}` : '');
+    console.log(
+      name.padEnd(13),
+      sc.skipped ? 'skipped' : `${sc.count} events`,
+      sc.error ? `ERROR: ${sc.error}` : ''
+    );
   }
   if (!process.env.QUIET) printCoverage(result);
 }
@@ -485,22 +632,39 @@ function compare(actualPath, baseline) {
   for (const name of new Set([...Object.keys(a), ...Object.keys(b)])) {
     const x = a[name];
     const y = b[name];
-    if (!x || !y) { console.log(`${name}: missing in ${x ? 'baseline' : 'actual'}`); bad++; continue; }
-    if (x.error !== y.error) { console.log(`${name}: error now=${x.error} baseline=${y.error}`); bad++; }
-    if (x.count !== y.count) { console.log(`${name}: event count ${x.count} != baseline ${y.count}`); bad++; }
+    if (!x || !y) {
+      console.log(`${name}: missing in ${x ? 'baseline' : 'actual'}`);
+      bad++;
+      continue;
+    }
+    if (x.error !== y.error) {
+      console.log(`${name}: error now=${x.error} baseline=${y.error}`);
+      bad++;
+    }
+    if (x.count !== y.count) {
+      console.log(`${name}: event count ${x.count} != baseline ${y.count}`);
+      bad++;
+    }
     for (let i = 0; i < Math.min(x.count || 0, y.count || 0); i++) {
       if (JSON.stringify(x.events[i]) !== JSON.stringify(y.events[i])) {
         bad++;
         const e = x.events[i];
-        console.log(`${name} #${i} ${e.ctor}${e.table ? ` ${e.table}` : ''} differs`);
+        console.log(
+          `${name} #${i} ${e.ctor}${e.table ? ` ${e.table}` : ''} differs`
+        );
       }
     }
   }
-  console.log(bad ? `${bad} difference(s) from baseline` : 'identical to baseline');
+  console.log(
+    bad ? `${bad} difference(s) from baseline` : 'identical to baseline'
+  );
   return bad === 0;
 }
 
 main().then(
   () => process.exit(baselinePath && !compare(out, baselinePath) ? 1 : 0),
-  (e) => { console.error('FAIL', e.stack || e); process.exit(1); }
+  (e) => {
+    console.error('FAIL', e.stack || e);
+    process.exit(1);
+  }
 );

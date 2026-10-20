@@ -3,7 +3,7 @@
 Two independent layers:
 
 - **Baseline** (`baseline-*.json`): what the driver decodes today, so a merge or rebase can be checked for behavior changes. A difference means "changed", not "wrong".
-- **Expected values** (`expected.js`, `check.js`): what the driver *should* decode, written from the SQL each scenario runs. Known defects are listed in `expected-failures.json`.
+- **Expected values** (`expected.js`, `check.js`): what the driver _should_ decode, written from the SQL each scenario runs. Known defects are listed in `expected-failures.json`.
 
 Each scenario gets a fresh binlog and its own stream, so a decoder crash in one is recorded for that scenario and does not hide the others. The events collected before a crash are kept.
 
@@ -55,21 +55,21 @@ Not covered by expected values: `Xid`, timestamps, thread ids and `executionTime
 
 Every code in `lib/constants/binlog_event_types.js` that a current server can send is produced by a scenario. The coverage report at the end of a run lists the rest with the reason.
 
-| Event | Scenario |
-| --- | --- |
-| STOP | `stop` |
-| ROTATE (real, not only the initial fake one) | `rotate` |
-| INTVAR | `sbr_intvar` |
-| RAND | `sbr_rand` |
-| USER_VAR | `user_var_*` (one per result type) |
-| BEGIN_LOAD_QUERY, EXECUTE_LOAD_QUERY | `load_data` |
-| HEARTBEAT | `heartbeat` (blocking dump, 0.1s period) |
-| ROWS_QUERY | `rows_query` |
-| GTID, PREVIOUS_GTIDS (non-empty) | `gtid` |
-| XA_PREPARE | `xa` |
-| PARTIAL_UPDATE_ROWS | `partial_json` |
-| TRANSACTION_PAYLOAD | `compression` |
-| WRITE/UPDATE/DELETE_ROWS_V1, ANNOTATE_ROWS, BINLOG_CHECKPOINT, MARIADB_GTID, GTID_LIST | `maria_*` |
+| Event                                                                                  | Scenario                                 |
+| -------------------------------------------------------------------------------------- | ---------------------------------------- |
+| STOP                                                                                   | `stop`                                   |
+| ROTATE (real, not only the initial fake one)                                           | `rotate`                                 |
+| INTVAR                                                                                 | `sbr_intvar`                             |
+| RAND                                                                                   | `sbr_rand`                               |
+| USER_VAR                                                                               | `user_var_*` (one per result type)       |
+| BEGIN_LOAD_QUERY, EXECUTE_LOAD_QUERY                                                   | `load_data`                              |
+| HEARTBEAT                                                                              | `heartbeat` (blocking dump, 0.1s period) |
+| ROWS_QUERY                                                                             | `rows_query`                             |
+| GTID, PREVIOUS_GTIDS (non-empty)                                                       | `gtid`                                   |
+| XA_PREPARE                                                                             | `xa`                                     |
+| PARTIAL_UPDATE_ROWS                                                                    | `partial_json`                           |
+| TRANSACTION_PAYLOAD                                                                    | `compression`                            |
+| WRITE/UPDATE/DELETE_ROWS_V1, ANNOTATE_ROWS, BINLOG_CHECKPOINT, MARIADB_GTID, GTID_LIST | `maria_*`                                |
 
 Not produced: events only pre-5.x servers sent, `INCIDENT` (needs a server fault), `IGNORABLE`, `HEARTBEAT_V2`, `GTID_TAGGED` (MySQL 8.4+), and `MARIADB_START_ENCRYPTION` (needs the encryption plugin and a key file).
 

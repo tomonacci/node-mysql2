@@ -1,4 +1,1 @@
-[
-  "types.enum.values",
-  "types.set.values"
-]
+["types.enum.values", "types.set.values"]

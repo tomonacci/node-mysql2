@@ -5,6 +5,7 @@ describe('createBinlogStream', () => {
   it('closes the connection when the stream is destroyed', async () => {
     let closed = 0;
     const connection = {
+      _handshakePacket: { serverVersion: '8.0.0' },
       query(_sql: string, cb: (...args: unknown[]) => void) {
         cb(null, [{ Value: 'NONE' }], [{}, { name: 'Value' }]);
       },

@@ -40,7 +40,6 @@ function decode(
   ]);
   const wire = Buffer.concat([Buffer.alloc(MYSQL_PACKET_PREFIX), header, body]);
 
-  // @ts-expect-error: TODO: implement typings
   return BinlogEventFactory.fromPacket(
     new Packet(0, wire, 0, wire.length),
     tableMap,
