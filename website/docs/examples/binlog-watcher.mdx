@@ -19,6 +19,7 @@ const binlogStream = mysql.createBinlogStream({
   filename: 'mysql-bin.000007',
   binlogPos: 120,
   flags: 1, // 1 = "non-blocking mode"
+  bigNumberStrings: true, // decode every BIGINT column as a string
 });
 
 binlogStream.pipe(
