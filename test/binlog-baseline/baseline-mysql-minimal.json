@@ -110,7 +110,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -125,7 +125,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -164,7 +170,7 @@
      "query": "CREATE TABLE t_tinyint (id INT PRIMARY KEY, v TINYINT)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -179,7 +185,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -468,7 +480,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -483,7 +495,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -522,7 +540,7 @@
      "query": "CREATE TABLE t_utinyint (id INT PRIMARY KEY, v TINYINT UNSIGNED)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -537,7 +555,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -622,7 +646,7 @@
       {
        "type": 1,
        "name": null,
-       "unsigned": false,
+       "unsigned": true,
        "is_primary": false,
        "charset_id": null,
        "character_set_name": null,
@@ -666,7 +690,7 @@
        {
         "type": 1,
         "name": null,
-        "unsigned": false,
+        "unsigned": true,
         "is_primary": false,
         "charset_id": null,
         "character_set_name": null,
@@ -690,7 +714,7 @@
      "optionalMetadata": {
       "unsigned_column_list": [
        false,
-       false
+       true
       ],
       "default_charset_collation": null,
       "charset_collation": {},
@@ -762,7 +786,7 @@
       {
        "type": 1,
        "name": null,
-       "unsigned": false,
+       "unsigned": true,
        "is_primary": false,
        "charset_id": null,
        "character_set_name": null,
@@ -785,7 +809,7 @@
       {
        "values": {
         "UNKNOWN_COL0": 1,
-        "UNKNOWN_COL1": -6
+        "UNKNOWN_COL1": 250
        },
        "none_sources": {}
       },
@@ -826,7 +850,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -841,7 +865,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -880,7 +910,7 @@
      "query": "CREATE TABLE t_smallint (id INT PRIMARY KEY, v SMALLINT)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -895,7 +925,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -1184,7 +1220,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -1199,7 +1235,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -1238,7 +1280,7 @@
      "query": "CREATE TABLE t_mediumint (id INT PRIMARY KEY, v MEDIUMINT)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -1253,7 +1295,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -1542,7 +1590,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -1557,7 +1605,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -1596,7 +1650,7 @@
      "query": "CREATE TABLE t_int (id INT PRIMARY KEY, v INT)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -1611,7 +1665,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -1900,7 +1960,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -1915,7 +1975,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -1954,7 +2020,7 @@
      "query": "CREATE TABLE t_bigint (id INT PRIMARY KEY, v BIGINT)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -1969,7 +2035,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -2258,7 +2330,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -2273,7 +2345,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -2312,7 +2390,7 @@
      "query": "CREATE TABLE t_ubigint (id INT PRIMARY KEY, v BIGINT UNSIGNED)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -2327,7 +2405,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -2412,7 +2496,7 @@
       {
        "type": 8,
        "name": null,
-       "unsigned": false,
+       "unsigned": true,
        "is_primary": false,
        "charset_id": null,
        "character_set_name": null,
@@ -2456,7 +2540,7 @@
        {
         "type": 8,
         "name": null,
-        "unsigned": false,
+        "unsigned": true,
         "is_primary": false,
         "charset_id": null,
         "character_set_name": null,
@@ -2480,7 +2564,7 @@
      "optionalMetadata": {
       "unsigned_column_list": [
        false,
-       false
+       true
       ],
       "default_charset_collation": null,
       "charset_collation": {},
@@ -2552,7 +2636,7 @@
       {
        "type": 8,
        "name": null,
-       "unsigned": false,
+       "unsigned": true,
        "is_primary": false,
        "charset_id": null,
        "character_set_name": null,
@@ -2575,7 +2659,7 @@
       {
        "values": {
         "UNKNOWN_COL0": 1,
-        "UNKNOWN_COL1": -1
+        "UNKNOWN_COL1": "18446744073709551615"
        },
        "none_sources": {}
       },
@@ -2616,7 +2700,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -2631,7 +2715,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -2670,7 +2760,7 @@
      "query": "CREATE TABLE t_float (id INT PRIMARY KEY, v FLOAT)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -2685,7 +2775,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -2974,7 +3070,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -2989,7 +3085,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -3028,7 +3130,7 @@
      "query": "CREATE TABLE t_double (id INT PRIMARY KEY, v DOUBLE)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -3043,7 +3145,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -3332,7 +3440,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -3347,7 +3455,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -3386,7 +3500,7 @@
      "query": "CREATE TABLE t_decimal (id INT PRIMARY KEY, v DECIMAL(20,5))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -3401,7 +3515,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -3651,7 +3771,31 @@
      "columnsPresentBitmap": {
       "$buf": "ff"
      },
-     "rows": "<9 rows, unstable>"
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": "123456789012345.12345"
+       },
+       "none_sources": {}
+      },
+      {
+       "values": {
+        "UNKNOWN_COL0": 2,
+        "UNKNOWN_COL1": "-0.00001"
+       },
+       "none_sources": {}
+      },
+      {
+       "values": {
+        "UNKNOWN_COL0": 3,
+        "UNKNOWN_COL1": null
+       },
+       "none_sources": {
+        "UNKNOWN_COL1": "null"
+       }
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -3672,7 +3816,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -3687,7 +3831,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -3726,7 +3876,7 @@
      "query": "CREATE TABLE t_decimal_small (id INT PRIMARY KEY, v DECIMAL(5,2))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -3741,7 +3891,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -3991,7 +4147,31 @@
      "columnsPresentBitmap": {
       "$buf": "ff"
      },
-     "rows": "<3 rows, unstable>"
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": "-12.50"
+       },
+       "none_sources": {}
+      },
+      {
+       "values": {
+        "UNKNOWN_COL0": 2,
+        "UNKNOWN_COL1": "0.00"
+       },
+       "none_sources": {}
+      },
+      {
+       "values": {
+        "UNKNOWN_COL0": 3,
+        "UNKNOWN_COL1": null
+       },
+       "none_sources": {
+        "UNKNOWN_COL1": "null"
+       }
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -4012,7 +4192,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -4027,7 +4207,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -4066,7 +4252,7 @@
      "query": "CREATE TABLE t_char (id INT PRIMARY KEY, v CHAR(10))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -4081,7 +4267,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -4168,8 +4360,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -4212,8 +4404,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 255,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -4310,8 +4502,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -4372,7 +4564,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -4387,7 +4579,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -4426,7 +4624,7 @@
      "query": "CREATE TABLE t_varchar (id INT PRIMARY KEY, v VARCHAR(300))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -4441,7 +4639,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -4528,8 +4732,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -4572,8 +4776,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 255,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -4670,8 +4874,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -4732,7 +4936,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -4747,7 +4951,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -4786,7 +4996,7 @@
      "query": "CREATE TABLE t_varchar_long (id INT PRIMARY KEY, v VARCHAR(1000))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -4801,7 +5011,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -4888,8 +5104,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -4932,8 +5148,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 255,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -5030,8 +5246,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -5092,7 +5308,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -5107,7 +5323,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -5146,7 +5368,7 @@
      "query": "CREATE TABLE t_text (id INT PRIMARY KEY, v TEXT)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -5161,7 +5383,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -5248,8 +5476,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -5292,8 +5520,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 255,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -5390,8 +5618,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -5452,7 +5680,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -5467,7 +5695,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -5506,7 +5740,7 @@
      "query": "CREATE TABLE t_blob (id INT PRIMARY KEY, v BLOB)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -5521,7 +5755,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -5608,8 +5848,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 63,
+       "character_set_name": "binary",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -5652,8 +5892,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 63,
+        "character_set_name": "binary",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -5750,8 +5990,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 63,
+       "character_set_name": "binary",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -5771,14 +6011,18 @@
       {
        "values": {
         "UNKNOWN_COL0": 1,
-        "UNKNOWN_COL1": "blobdata"
+        "UNKNOWN_COL1": {
+         "$buf": "626c6f6264617461"
+        }
        },
        "none_sources": {}
       },
       {
        "values": {
         "UNKNOWN_COL0": 2,
-        "UNKNOWN_COL1": ""
+        "UNKNOWN_COL1": {
+         "$buf": ""
+        }
        },
        "none_sources": {}
       },
@@ -5812,7 +6056,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -5827,7 +6071,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -5866,7 +6116,7 @@
      "query": "CREATE TABLE t_binary (id INT PRIMARY KEY, v BINARY(4))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -5881,7 +6131,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -5968,8 +6224,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 63,
+       "character_set_name": "binary",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -6012,8 +6268,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 63,
+        "character_set_name": "binary",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -6110,8 +6366,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 63,
+       "character_set_name": "binary",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -6131,14 +6387,18 @@
       {
        "values": {
         "UNKNOWN_COL0": 1,
-        "UNKNOWN_COL1": "ab"
+        "UNKNOWN_COL1": {
+         "$buf": "61620000"
+        }
        },
        "none_sources": {}
       },
       {
        "values": {
         "UNKNOWN_COL0": 2,
-        "UNKNOWN_COL1": "abcd"
+        "UNKNOWN_COL1": {
+         "$buf": "61626364"
+        }
        },
        "none_sources": {}
       },
@@ -6172,7 +6432,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -6187,7 +6447,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -6226,7 +6492,7 @@
      "query": "CREATE TABLE t_varbinary (id INT PRIMARY KEY, v VARBINARY(20))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -6241,7 +6507,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -6328,8 +6600,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 63,
+       "character_set_name": "binary",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -6372,8 +6644,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 63,
+        "character_set_name": "binary",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -6470,8 +6742,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 63,
+       "character_set_name": "binary",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -6491,14 +6763,18 @@
       {
        "values": {
         "UNKNOWN_COL0": 1,
-        "UNKNOWN_COL1": "vb"
+        "UNKNOWN_COL1": {
+         "$buf": "7662"
+        }
        },
        "none_sources": {}
       },
       {
        "values": {
         "UNKNOWN_COL0": 2,
-        "UNKNOWN_COL1": ""
+        "UNKNOWN_COL1": {
+         "$buf": ""
+        }
        },
        "none_sources": {}
       },
@@ -6532,7 +6808,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -6547,7 +6823,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -6586,7 +6868,7 @@
      "query": "CREATE TABLE t_date (id INT PRIMARY KEY, v DATE)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -6601,7 +6883,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -6894,7 +7182,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -6909,7 +7197,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -6948,7 +7242,7 @@
      "query": "CREATE TABLE t_time (id INT PRIMARY KEY, v TIME)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -6963,7 +7257,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -7211,18 +7511,14 @@
       {
        "values": {
         "UNKNOWN_COL0": 1,
-        "UNKNOWN_COL1": {
-         "$msSinceUtcMidnight": 45296000
-        }
+        "UNKNOWN_COL1": "-12:34:56"
        },
        "none_sources": {}
       },
       {
        "values": {
         "UNKNOWN_COL0": 2,
-        "UNKNOWN_COL1": {
-         "$msSinceUtcMidnight": 3020399000
-        }
+        "UNKNOWN_COL1": "838:59:59"
        },
        "none_sources": {}
       },
@@ -7256,7 +7552,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -7271,7 +7567,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -7310,7 +7612,7 @@
      "query": "CREATE TABLE t_time3 (id INT PRIMARY KEY, v TIME(3))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -7325,7 +7627,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -7573,18 +7881,14 @@
       {
        "values": {
         "UNKNOWN_COL0": 1,
-        "UNKNOWN_COL1": {
-         "$msSinceUtcMidnight": 3723456
-        }
+        "UNKNOWN_COL1": "01:02:03.456"
        },
        "none_sources": {}
       },
       {
        "values": {
         "UNKNOWN_COL0": 2,
-        "UNKNOWN_COL1": {
-         "$msSinceUtcMidnight": 0
-        }
+        "UNKNOWN_COL1": "00:00:00.000"
        },
        "none_sources": {}
       },
@@ -7618,7 +7922,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -7633,7 +7937,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -7672,7 +7982,7 @@
      "query": "CREATE TABLE t_datetime (id INT PRIMARY KEY, v DATETIME)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -7687,7 +7997,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -7939,7 +8255,7 @@
        "values": {
         "UNKNOWN_COL0": 1,
         "UNKNOWN_COL1": {
-         "$date": "+010058-08-29T12:34:56.000Z"
+         "$date": "2024-02-29T12:34:56.000Z"
         }
        },
        "none_sources": {}
@@ -7948,7 +8264,7 @@
        "values": {
         "UNKNOWN_COL0": 2,
         "UNKNOWN_COL1": {
-         "$date": "+010058-07-01T00:00:00.000Z"
+         "$date": "1000-01-01T00:00:00.000Z"
         }
        },
        "none_sources": {}
@@ -7983,7 +8299,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -7998,7 +8314,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -8037,7 +8359,7 @@
      "query": "CREATE TABLE t_datetime6 (id INT PRIMARY KEY, v DATETIME(6))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -8052,7 +8374,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -8304,7 +8632,7 @@
        "values": {
         "UNKNOWN_COL0": 1,
         "UNKNOWN_COL1": {
-         "$date": "+010058-08-29T12:34:56.123Z"
+         "$date": "2024-02-29T12:34:56.123Z"
         }
        },
        "none_sources": {}
@@ -8313,7 +8641,7 @@
        "values": {
         "UNKNOWN_COL0": 2,
         "UNKNOWN_COL1": {
-         "$date": "+010058-07-01T00:00:00.000Z"
+         "$date": "1000-01-01T00:00:00.000Z"
         }
        },
        "none_sources": {}
@@ -8348,7 +8676,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -8363,7 +8691,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -8403,7 +8737,7 @@
      "query": "CREATE TABLE t_timestamp (id INT PRIMARY KEY, v TIMESTAMP NULL)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -8418,7 +8752,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -8714,7 +9054,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -8729,7 +9069,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -8769,7 +9115,7 @@
      "query": "CREATE TABLE t_timestamp3 (id INT PRIMARY KEY, v TIMESTAMP(3) NULL)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -8784,7 +9130,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -9080,7 +9432,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -9095,7 +9447,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -9134,7 +9492,7 @@
      "query": "CREATE TABLE t_year (id INT PRIMARY KEY, v YEAR)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -9149,7 +9507,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -9438,7 +9802,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -9453,7 +9817,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -9492,7 +9862,7 @@
      "query": "CREATE TABLE t_enum (id INT PRIMARY KEY, v ENUM('a','b','c'))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -9507,7 +9877,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -9755,20 +10131,16 @@
       {
        "values": {
         "UNKNOWN_COL0": 1,
-        "UNKNOWN_COL1": null
+        "UNKNOWN_COL1": 2
        },
-       "none_sources": {
-        "UNKNOWN_COL1": "null"
-       }
+       "none_sources": {}
       },
       {
        "values": {
         "UNKNOWN_COL0": 2,
-        "UNKNOWN_COL1": null
+        "UNKNOWN_COL1": 3
        },
-       "none_sources": {
-        "UNKNOWN_COL1": "null"
-       }
+       "none_sources": {}
       },
       {
        "values": {
@@ -9800,7 +10172,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -9815,7 +10187,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -9854,7 +10232,7 @@
      "query": "CREATE TABLE t_set (id INT PRIMARY KEY, v SET('x','y','z'))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -9869,7 +10247,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -10117,20 +10501,16 @@
       {
        "values": {
         "UNKNOWN_COL0": 1,
-        "UNKNOWN_COL1": null
+        "UNKNOWN_COL1": 5
        },
-       "none_sources": {
-        "UNKNOWN_COL1": "null"
-       }
+       "none_sources": {}
       },
       {
        "values": {
         "UNKNOWN_COL0": 2,
-        "UNKNOWN_COL1": null
+        "UNKNOWN_COL1": 0
        },
-       "none_sources": {
-        "UNKNOWN_COL1": "null"
-       }
+       "none_sources": {}
       },
       {
        "values": {
@@ -10162,7 +10542,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -10177,7 +10557,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -10216,7 +10602,7 @@
      "query": "CREATE TABLE t_bit (id INT PRIMARY KEY, v BIT(12))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -10231,7 +10617,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -10479,14 +10871,18 @@
       {
        "values": {
         "UNKNOWN_COL0": 1,
-        "UNKNOWN_COL1": "101010101010"
+        "UNKNOWN_COL1": {
+         "$buf": "0aaa"
+        }
        },
        "none_sources": {}
       },
       {
        "values": {
         "UNKNOWN_COL0": 2,
-        "UNKNOWN_COL1": "000000000000"
+        "UNKNOWN_COL1": {
+         "$buf": "0000"
+        }
        },
        "none_sources": {}
       },
@@ -10520,7 +10916,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -10535,7 +10931,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -10574,7 +10976,7 @@
      "query": "CREATE TABLE t_json (id INT PRIMARY KEY, v JSON)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -10589,7 +10991,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -10833,7 +11241,40 @@
      "columnsPresentBitmap": {
       "$buf": "ff"
      },
-     "rowsError": "this.packet.readBinaryJson is not a function"
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": {
+         "k": [
+          1,
+          2,
+          {
+           "n": null
+          }
+         ],
+         "s": "v"
+        }
+       },
+       "none_sources": {}
+      },
+      {
+       "values": {
+        "UNKNOWN_COL0": 2,
+        "UNKNOWN_COL1": []
+       },
+       "none_sources": {}
+      },
+      {
+       "values": {
+        "UNKNOWN_COL0": 3,
+        "UNKNOWN_COL1": null
+       },
+       "none_sources": {
+        "UNKNOWN_COL1": "null"
+       }
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -10854,7 +11295,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -10869,7 +11310,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -10957,8 +11404,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -11001,8 +11448,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 255,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -11099,8 +11546,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -11153,7 +11600,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -11168,7 +11615,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -11552,7 +12005,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -11567,7 +12020,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -11606,7 +12065,7 @@
      "query": "CREATE TABLE t_small (a INT, b VARCHAR(20))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -11621,7 +12080,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -11708,8 +12173,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -11752,8 +12217,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 255,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -11850,8 +12315,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -11910,7 +12375,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -11925,7 +12390,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -12013,8 +12484,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -12057,8 +12528,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 255,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -12155,8 +12626,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -12209,7 +12680,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -12224,7 +12695,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -12312,8 +12789,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -12356,8 +12833,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 255,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -12454,8 +12931,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -12532,7 +13009,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -12547,7 +13024,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -12634,8 +13117,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -12678,8 +13161,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 255,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -12776,8 +13259,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -12822,7 +13305,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -12837,7 +13320,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -12924,8 +13413,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -12968,8 +13457,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 255,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -13066,8 +13555,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -13146,8 +13635,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -13190,8 +13679,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 255,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -13288,8 +13777,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -13336,7 +13825,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -13351,7 +13840,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -13438,8 +13933,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -13482,8 +13977,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 255,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -13580,8 +14075,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -13647,7 +14142,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -13662,7 +14157,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -13701,7 +14202,7 @@
      "query": "ALTER TABLE t_small ADD COLUMN c INT DEFAULT 7"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -13716,7 +14217,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -13803,8 +14310,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -13865,8 +14372,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 255,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -13982,8 +14489,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 255,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -14047,7 +14554,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -14062,7 +14569,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -14208,7 +14721,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -14223,7 +14736,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -14262,7 +14781,7 @@
      "query": "CREATE TABLE t_rq (id INT PRIMARY KEY, v INT)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -14277,7 +14796,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -14312,7 +14837,7 @@
      "query": "BEGIN"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "RowsQueryLogEvent",
      "eventHeader": {
       "eventType": 29,
       "serverId": 1,
@@ -14327,7 +14852,8 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "query": "INSERT INTO t_rq VALUES (1,1),(2,2)"
     },
     {
      "ctor": "TableMapEvent",
@@ -14575,7 +15101,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -14590,7 +15116,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -14626,7 +15158,7 @@
      "query": "BEGIN"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "RowsQueryLogEvent",
      "eventHeader": {
       "eventType": 29,
       "serverId": 1,
@@ -14641,7 +15173,8 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "query": "UPDATE t_rq SET v=v+1"
     },
     {
      "ctor": "TableMapEvent",
@@ -14902,7 +15435,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -14917,7 +15450,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -14952,7 +15491,7 @@
      "query": "BEGIN"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "RowsQueryLogEvent",
      "eventHeader": {
       "eventType": 29,
       "serverId": 1,
@@ -14967,7 +15506,8 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "query": "DELETE FROM t_rq WHERE id=1"
     },
     {
      "ctor": "TableMapEvent",
@@ -15319,7 +15859,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -15334,7 +15874,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -15373,7 +15919,7 @@
      "query": "CREATE TABLE t_xa (id INT PRIMARY KEY)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -15388,7 +15934,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -15645,7 +16197,7 @@
      }
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -15660,7 +16212,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -15695,7 +16253,7 @@
      "query": "XA COMMIT X'7831',X'',1"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -15710,7 +16268,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -15967,7 +16531,7 @@
      }
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -15982,7 +16546,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -16128,7 +16698,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -16143,7 +16713,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -16182,7 +16758,7 @@
      "query": "CREATE TABLE t_pj (id INT PRIMARY KEY, doc JSON)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -16197,7 +16773,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -16441,7 +17023,25 @@
      "columnsPresentBitmap": {
       "$buf": "ff"
      },
-     "rowsError": "this.packet.readBinaryJson is not a function"
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": {
+         "a": 1,
+         "b": [
+          1,
+          2,
+          3
+         ],
+         "c": {
+          "d": "x"
+         }
+        }
+       },
+       "none_sources": {}
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -16462,7 +17062,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -16477,7 +17077,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -16725,7 +17331,36 @@
      "columnsPresentBitmap2": {
       "$buf": "ff"
      },
-     "rowsError": "this.packet.readBinaryJson is not a function"
+     "rows": [
+      {
+       "before_values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": {
+         "a": 1,
+         "b": [
+          1,
+          2,
+          3
+         ],
+         "c": {
+          "d": "x"
+         }
+        }
+       },
+       "before_none_sources": {},
+       "after_values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": [
+         {
+          "operation": "REPLACE",
+          "path": "$.a",
+          "value": 2
+         }
+        ]
+       },
+       "after_none_sources": {}
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -16746,7 +17381,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -16761,7 +17396,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -17009,7 +17650,35 @@
      "columnsPresentBitmap2": {
       "$buf": "ff"
      },
-     "rowsError": "this.packet.readBinaryJson is not a function"
+     "rows": [
+      {
+       "before_values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": {
+         "a": 2,
+         "b": [
+          1,
+          2,
+          3
+         ],
+         "c": {
+          "d": "x"
+         }
+        }
+       },
+       "before_none_sources": {},
+       "after_values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": [
+         {
+          "operation": "REMOVE",
+          "path": "$.b[1]"
+         }
+        ]
+       },
+       "after_none_sources": {}
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -17030,7 +17699,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -17045,7 +17714,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -17293,7 +17968,35 @@
      "columnsPresentBitmap2": {
       "$buf": "ff"
      },
-     "rowsError": "this.packet.readBinaryJson is not a function"
+     "rows": [
+      {
+       "before_values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": {
+         "a": 2,
+         "b": [
+          1,
+          3
+         ],
+         "c": {
+          "d": "x"
+         }
+        }
+       },
+       "before_none_sources": {},
+       "after_values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": [
+         {
+          "operation": "REPLACE",
+          "path": "$.c.d",
+          "value": "y"
+         }
+        ]
+       },
+       "after_none_sources": {}
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -17316,7 +18019,7 @@
    ]
   },
   "compression": {
-   "count": 7,
+   "count": 13,
    "events": [
     {
      "ctor": "RotateEvent",
@@ -17425,7 +18128,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -17440,7 +18143,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -17479,7 +18188,7 @@
      "query": "CREATE TABLE t_cmp (id INT PRIMARY KEY, v VARCHAR(100))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -17494,16 +18203,532 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "TransactionPayloadEvent",
      "eventHeader": {
       "eventType": 40,
       "serverId": 1,
       "flags": 0
      },
      "eventType": 40,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "compressionType": 0
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 71,
+      "logPos": 0,
+      "flags": 8
+     },
+     "eventType": 2,
+     "eventSize": 71,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 29,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "BEGIN"
+    },
+    {
+     "ctor": "TableMapEvent",
+     "eventHeader": {
+      "eventType": 19,
+      "serverId": 1,
+      "eventSize": 55,
+      "logPos": 0,
+      "flags": 0
+     },
+     "eventType": 19,
+     "eventSize": 55,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__freeze_schema": false,
+     "__optional_meta_data": true,
+     "flags": 1,
+     "schemaLength": 4,
+     "schema": "test",
+     "tableLength": 5,
+     "table": "t_cmp",
+     "columnCount": 2,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 15,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": 255,
+       "character_set_name": "utf8",
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 400,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "nullBitmask": {
+      "$buf": "02"
+     },
+     "tableObj": {
+      "schema": "test",
+      "table": "t_cmp",
+      "columns": [
+       {
+        "type": 3,
+        "name": null,
+        "unsigned": false,
+        "is_primary": false,
+        "charset_id": null,
+        "character_set_name": null,
+        "collation_name": null,
+        "enum_values": null,
+        "set_values": null,
+        "visibility": false,
+        "max_length": 0,
+        "length_size": 0,
+        "fsp": 0,
+        "bits": 0,
+        "bytes": 0,
+        "size": 0
+       },
+       {
+        "type": 15,
+        "name": null,
+        "unsigned": false,
+        "is_primary": false,
+        "charset_id": 255,
+        "character_set_name": "utf8",
+        "collation_name": null,
+        "enum_values": null,
+        "set_values": null,
+        "visibility": false,
+        "max_length": 400,
+        "length_size": 0,
+        "fsp": 0,
+        "bits": 0,
+        "bytes": 0,
+        "size": 0
+       }
+      ],
+      "column_name_flag": false,
+      "data": {
+       "primary_key": []
+      }
+     },
+     "optionalMetadata": {
+      "unsigned_column_list": [
+       false,
+       false
+      ],
+      "default_charset_collation": 255,
+      "charset_collation": {},
+      "column_charset": [],
+      "column_name_list": [],
+      "set_str_value_list": [],
+      "set_enum_str_value_list": [],
+      "geometry_type_list": [],
+      "simple_primary_key_list": [],
+      "primary_keys_with_prefix": {},
+      "enum_and_set_default_charset": null,
+      "enum_and_set_charset_collation": {},
+      "enum_and_set_default_column_charset_list": [],
+      "charset_collation_list": [
+       255
+      ],
+      "enum_and_set_collation_list": [],
+      "visibility_list": []
+     }
+    },
+    {
+     "ctor": "WriteRowsEvent",
+     "eventHeader": {
+      "eventType": 30,
+      "serverId": 1,
+      "eventSize": 47,
+      "logPos": 0,
+      "flags": 0
+     },
+     "eventType": 30,
+     "eventSize": 47,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "__rows": null,
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__big_number_strings": false,
+     "__none_sources": {},
+     "primaryKey": [],
+     "schema": "test",
+     "table": "t_cmp",
+     "processed": true,
+     "flags": 1,
+     "extraDataLength": 2,
+     "numberOfColumns": 2,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 15,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": 255,
+       "character_set_name": "utf8",
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 400,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "columnsPresentBitmap": {
+      "$buf": "ff"
+     },
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": "a"
+       },
+       "none_sources": {}
+      },
+      {
+       "values": {
+        "UNKNOWN_COL0": 2,
+        "UNKNOWN_COL1": "b"
+       },
+       "none_sources": {}
+      }
+     ]
+    },
+    {
+     "ctor": "TableMapEvent",
+     "eventHeader": {
+      "eventType": 19,
+      "serverId": 1,
+      "eventSize": 55,
+      "logPos": 0,
+      "flags": 0
+     },
+     "eventType": 19,
+     "eventSize": 55,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__freeze_schema": false,
+     "__optional_meta_data": true,
+     "flags": 1,
+     "schemaLength": 4,
+     "schema": "test",
+     "tableLength": 5,
+     "table": "t_cmp",
+     "columnCount": 2,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 15,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": 255,
+       "character_set_name": "utf8",
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 400,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "nullBitmask": {
+      "$buf": "02"
+     },
+     "tableObj": {
+      "schema": "test",
+      "table": "t_cmp",
+      "columns": [
+       {
+        "type": 3,
+        "name": null,
+        "unsigned": false,
+        "is_primary": false,
+        "charset_id": null,
+        "character_set_name": null,
+        "collation_name": null,
+        "enum_values": null,
+        "set_values": null,
+        "visibility": false,
+        "max_length": 0,
+        "length_size": 0,
+        "fsp": 0,
+        "bits": 0,
+        "bytes": 0,
+        "size": 0
+       },
+       {
+        "type": 15,
+        "name": null,
+        "unsigned": false,
+        "is_primary": false,
+        "charset_id": 255,
+        "character_set_name": "utf8",
+        "collation_name": null,
+        "enum_values": null,
+        "set_values": null,
+        "visibility": false,
+        "max_length": 400,
+        "length_size": 0,
+        "fsp": 0,
+        "bits": 0,
+        "bytes": 0,
+        "size": 0
+       }
+      ],
+      "column_name_flag": false,
+      "data": {
+       "primary_key": []
+      }
+     },
+     "optionalMetadata": {
+      "unsigned_column_list": [
+       false,
+       false
+      ],
+      "default_charset_collation": 255,
+      "charset_collation": {},
+      "column_charset": [],
+      "column_name_list": [],
+      "set_str_value_list": [],
+      "set_enum_str_value_list": [],
+      "geometry_type_list": [],
+      "simple_primary_key_list": [],
+      "primary_keys_with_prefix": {},
+      "enum_and_set_default_charset": null,
+      "enum_and_set_charset_collation": {},
+      "enum_and_set_default_column_charset_list": [],
+      "charset_collation_list": [
+       255
+      ],
+      "enum_and_set_collation_list": [],
+      "visibility_list": []
+     }
+    },
+    {
+     "ctor": "UpdateRowsEvent",
+     "eventHeader": {
+      "eventType": 31,
+      "serverId": 1,
+      "eventSize": 48,
+      "logPos": 0,
+      "flags": 0
+     },
+     "eventType": 31,
+     "eventSize": 48,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "__rows": null,
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__big_number_strings": false,
+     "__none_sources": {},
+     "primaryKey": [],
+     "schema": "test",
+     "table": "t_cmp",
+     "processed": true,
+     "flags": 1,
+     "extraDataLength": 2,
+     "numberOfColumns": 2,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 15,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": 255,
+       "character_set_name": "utf8",
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 400,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "columnsPresentBitmap": {
+      "$buf": "ff"
+     },
+     "columnsPresentBitmap2": {
+      "$buf": "ff"
+     },
+     "rows": [
+      {
+       "before_values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": "a"
+       },
+       "before_none_sources": {},
+       "after_values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": "c"
+       },
+       "after_none_sources": {}
+      }
+     ]
+    },
+    {
+     "ctor": "XidEvent",
+     "eventHeader": {
+      "eventType": 16,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 0,
+      "flags": 0
+     },
+     "eventType": 16,
+     "eventSize": 27,
      "mysqlVersion": [
       0,
       0,
@@ -17623,7 +18848,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -17638,7 +18863,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -17677,7 +18908,7 @@
      "query": "CREATE TABLE t_sbr (id INT AUTO_INCREMENT PRIMARY KEY, v VARCHAR(60))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -17692,7 +18923,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -17803,7 +19040,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -17818,7 +19055,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -17949,7 +19192,7 @@
      "dbms": "mysql"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -17964,7 +19207,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -18186,7 +19435,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -18201,7 +19450,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -18240,7 +19495,7 @@
      "query": "CREATE TABLE t_sbr (id INT AUTO_INCREMENT PRIMARY KEY, d DOUBLE)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -18255,7 +19510,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -18386,7 +19647,7 @@
    ]
   },
   "user_var_string": {
-   "count": 8,
+   "count": 11,
    "events": [
     {
      "ctor": "RotateEvent",
@@ -18495,7 +19756,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -18510,7 +19771,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -18549,7 +19816,7 @@
      "query": "CREATE TABLE t_uv (id INT AUTO_INCREMENT PRIMARY KEY, v VARCHAR(60))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -18564,7 +19831,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -18620,9 +19893,112 @@
      "dbms": "mysql",
      "type": 2,
      "value": 1
+    },
+    {
+     "ctor": "UserVarEvent",
+     "eventHeader": {
+      "eventType": 14,
+      "serverId": 1,
+      "eventSize": 37,
+      "logPos": 624,
+      "flags": 0
+     },
+     "eventType": 14,
+     "eventSize": 37,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nameLen": 1,
+     "name": "u",
+     "isNull": 0,
+     "typeToCodesAndMethod": {
+      "0": [
+       "STRING_RESULT",
+       null
+      ],
+      "1": [
+       "REAL_RESULT",
+       null
+      ],
+      "2": [
+       "INT_RESULT",
+       null
+      ],
+      "3": [
+       "ROW_RESULT",
+       null
+      ],
+      "4": [
+       "DECIMAL_RESULT",
+       null
+      ]
+     },
+     "value": "abc",
+     "flags": null,
+     "tempValueBuffer": {
+      "$buf": "616263"
+     },
+     "type": 0,
+     "charset": 224,
+     "valueLen": 3
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 105,
+      "logPos": 733,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 105,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "INSERT INTO t_uv (v) VALUES (@u)"
+    },
+    {
+     "ctor": "XidEvent",
+     "eventHeader": {
+      "eventType": 16,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 764,
+      "flags": 0
+     },
+     "eventType": 16,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
     }
-   ],
-   "error": "Buffer overrun"
+   ]
   },
   "user_var_int": {
    "count": 11,
@@ -18734,7 +20110,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -18749,7 +20125,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -18788,7 +20170,7 @@
      "query": "CREATE TABLE t_uv (id INT AUTO_INCREMENT PRIMARY KEY, v VARCHAR(60))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -18803,7 +20185,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -18967,7 +20355,7 @@
    ]
   },
   "user_var_real": {
-   "count": 8,
+   "count": 11,
    "events": [
     {
      "ctor": "RotateEvent",
@@ -19076,7 +20464,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -19091,7 +20479,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -19130,7 +20524,7 @@
      "query": "CREATE TABLE t_uv (id INT AUTO_INCREMENT PRIMARY KEY, v VARCHAR(60))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -19145,7 +20539,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -19201,12 +20601,115 @@
      "dbms": "mysql",
      "type": 2,
      "value": 1
+    },
+    {
+     "ctor": "UserVarEvent",
+     "eventHeader": {
+      "eventType": 14,
+      "serverId": 1,
+      "eventSize": 42,
+      "logPos": 629,
+      "flags": 0
+     },
+     "eventType": 14,
+     "eventSize": 42,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nameLen": 1,
+     "name": "u",
+     "isNull": 0,
+     "typeToCodesAndMethod": {
+      "0": [
+       "STRING_RESULT",
+       null
+      ],
+      "1": [
+       "REAL_RESULT",
+       null
+      ],
+      "2": [
+       "INT_RESULT",
+       null
+      ],
+      "3": [
+       "ROW_RESULT",
+       null
+      ],
+      "4": [
+       "DECIMAL_RESULT",
+       null
+      ]
+     },
+     "value": 1.5,
+     "flags": null,
+     "tempValueBuffer": {
+      "$buf": "000000000000f83f"
+     },
+     "type": 1,
+     "charset": 224,
+     "valueLen": 8
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 105,
+      "logPos": 738,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 105,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "INSERT INTO t_uv (v) VALUES (@u)"
+    },
+    {
+     "ctor": "XidEvent",
+     "eventHeader": {
+      "eventType": 16,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 769,
+      "flags": 0
+     },
+     "eventType": 16,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
     }
-   ],
-   "error": "Buffer overrun"
+   ]
   },
   "user_var_decimal": {
-   "count": 8,
+   "count": 11,
    "events": [
     {
      "ctor": "RotateEvent",
@@ -19315,7 +20818,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -19330,7 +20833,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -19369,7 +20878,7 @@
      "query": "CREATE TABLE t_uv (id INT AUTO_INCREMENT PRIMARY KEY, v VARCHAR(60))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -19384,7 +20893,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -19440,9 +20955,112 @@
      "dbms": "mysql",
      "type": 2,
      "value": 1
+    },
+    {
+     "ctor": "UserVarEvent",
+     "eventHeader": {
+      "eventType": 14,
+      "serverId": 1,
+      "eventSize": 38,
+      "logPos": 625,
+      "flags": 0
+     },
+     "eventType": 14,
+     "eventSize": 38,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "nameLen": 1,
+     "name": "u",
+     "isNull": 0,
+     "typeToCodesAndMethod": {
+      "0": [
+       "STRING_RESULT",
+       null
+      ],
+      "1": [
+       "REAL_RESULT",
+       null
+      ],
+      "2": [
+       "INT_RESULT",
+       null
+      ],
+      "3": [
+       "ROW_RESULT",
+       null
+      ],
+      "4": [
+       "DECIMAL_RESULT",
+       null
+      ]
+     },
+     "value": "1.25",
+     "flags": null,
+     "tempValueBuffer": {
+      "$buf": "03028119"
+     },
+     "type": 4,
+     "charset": 224,
+     "valueLen": 4
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 105,
+      "logPos": 734,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 105,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "INSERT INTO t_uv (v) VALUES (@u)"
+    },
+    {
+     "ctor": "XidEvent",
+     "eventHeader": {
+      "eventType": 16,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 765,
+      "flags": 0
+     },
+     "eventType": 16,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
     }
-   ],
-   "error": "Buffer overrun"
+   ]
   },
   "user_var_null": {
    "count": 11,
@@ -19554,7 +21172,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -19569,7 +21187,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -19608,7 +21232,7 @@
      "query": "CREATE TABLE t_uv (id INT AUTO_INCREMENT PRIMARY KEY, v VARCHAR(60))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -19623,7 +21247,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -19896,7 +21526,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -19911,7 +21541,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -19950,7 +21586,7 @@
      "query": "CREATE TABLE t_load (id INT PRIMARY KEY, v VARCHAR(20))"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -19965,7 +21601,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -20025,7 +21667,7 @@
      }
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "ExecuteLoadQueryEvent",
      "eventHeader": {
       "eventType": 18,
       "serverId": 1,
@@ -20040,7 +21682,28 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 36,
+     "fileId": 1,
+     "startPos": 9,
+     "endPos": 45,
+     "dupHandlingFlags": 1,
+     "flags2": 0,
+     "sqlMode": 1168113704,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 255,
+     "mtsAccessedDbNames": [
+      "test"
+     ],
+     "defaultCollationForUtf8mb4Number": 255,
+     "schema": "test",
+     "query": "LOAD DATA LOCAL INFILE 'rows.tsv' IGNORE INTO TABLE `t_load` FIELDS TERMINATED BY '\\t' ENCLOSED BY '' ESCAPED BY '\\\\' LINES TERMINATED BY '\\n' (`id`, `v`)"
     },
     {
      "ctor": "XidEvent",
@@ -20172,7 +21835,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -20187,7 +21850,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -20226,7 +21895,7 @@
      "query": "CREATE TABLE t_rot (id INT PRIMARY KEY)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -20241,7 +21910,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -20584,7 +22259,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -20599,7 +22274,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -20942,7 +22623,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -20957,7 +22638,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -22840,7 +24527,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -22855,7 +24542,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -22894,7 +24587,7 @@
      "query": "CREATE TABLE t_stop (id INT PRIMARY KEY)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -22909,7 +24602,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -23361,7 +25060,7 @@
      "previousGtids": ""
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -23376,7 +25075,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": true,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",
@@ -23415,7 +25120,7 @@
      "query": "CREATE TABLE t_hb (id INT PRIMARY KEY)"
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "AnonymousGtidEvent",
      "eventHeader": {
       "eventType": 34,
       "serverId": 1,
@@ -23430,7 +25135,13 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "commitFlag": false,
+     "sid": {
+      "$buf": "00000000000000000000000000000000"
+     },
+     "gno": 0,
+     "ltType": 2
     },
     {
      "ctor": "QueryEvent",

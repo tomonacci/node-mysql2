@@ -307,12 +307,12 @@
      "eventHeader": {
       "eventType": 19,
       "serverId": 1,
-      "eventSize": 45,
+      "eventSize": 53,
       "logPos": 0,
       "flags": 0
      },
      "eventType": 19,
-     "eventSize": 45,
+     "eventSize": 53,
      "mysqlVersion": [
       0,
       0,
@@ -355,8 +355,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 2304,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -399,8 +399,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 2304,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -419,8 +419,11 @@
       }
      },
      "optionalMetadata": {
-      "unsigned_column_list": [],
-      "default_charset_collation": null,
+      "unsigned_column_list": [
+       false,
+       false
+      ],
+      "default_charset_collation": 2304,
       "charset_collation": {},
       "column_charset": [],
       "column_name_list": [],
@@ -432,13 +435,15 @@
       "enum_and_set_default_charset": null,
       "enum_and_set_charset_collation": {},
       "enum_and_set_default_column_charset_list": [],
-      "charset_collation_list": [],
+      "charset_collation_list": [
+       2304
+      ],
       "enum_and_set_collation_list": [],
       "visibility_list": []
      }
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "WriteRowsEvent",
      "eventHeader": {
       "eventType": 23,
       "serverId": 1,
@@ -453,7 +458,77 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "__rows": null,
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__big_number_strings": false,
+     "__none_sources": {},
+     "primaryKey": [],
+     "schema": "test",
+     "table": "t_m",
+     "processed": true,
+     "flags": 1,
+     "numberOfColumns": 2,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 15,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": 2304,
+       "character_set_name": "utf8",
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 80,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "columnsPresentBitmap": {
+      "$buf": "03"
+     },
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": "one"
+       },
+       "none_sources": {}
+      },
+      {
+       "values": {
+        "UNKNOWN_COL0": 2,
+        "UNKNOWN_COL1": "two"
+       },
+       "none_sources": {}
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -461,7 +536,7 @@
       "eventType": 16,
       "serverId": 1,
       "eventSize": 27,
-      "logPos": 569,
+      "logPos": 577,
       "flags": 0
      },
      "eventType": 16,
@@ -479,7 +554,7 @@
       "eventType": 162,
       "serverId": 1,
       "eventSize": 38,
-      "logPos": 611,
+      "logPos": 619,
       "flags": 8
      },
      "eventType": 162,
@@ -522,12 +597,12 @@
      "eventHeader": {
       "eventType": 19,
       "serverId": 1,
-      "eventSize": 45,
+      "eventSize": 53,
       "logPos": 0,
       "flags": 0
      },
      "eventType": 19,
-     "eventSize": 45,
+     "eventSize": 53,
      "mysqlVersion": [
       0,
       0,
@@ -570,8 +645,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 2304,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -614,8 +689,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 2304,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -634,8 +709,11 @@
       }
      },
      "optionalMetadata": {
-      "unsigned_column_list": [],
-      "default_charset_collation": null,
+      "unsigned_column_list": [
+       false,
+       false
+      ],
+      "default_charset_collation": 2304,
       "charset_collation": {},
       "column_charset": [],
       "column_name_list": [],
@@ -647,13 +725,15 @@
       "enum_and_set_default_charset": null,
       "enum_and_set_charset_collation": {},
       "enum_and_set_default_column_charset_list": [],
-      "charset_collation_list": [],
+      "charset_collation_list": [
+       2304
+      ],
       "enum_and_set_collation_list": [],
       "visibility_list": []
      }
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "UpdateRowsEvent",
      "eventHeader": {
       "eventType": 24,
       "serverId": 1,
@@ -668,7 +748,78 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "__rows": null,
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__big_number_strings": false,
+     "__none_sources": {},
+     "primaryKey": [],
+     "schema": "test",
+     "table": "t_m",
+     "processed": true,
+     "flags": 1,
+     "numberOfColumns": 2,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 15,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": 2304,
+       "character_set_name": "utf8",
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 80,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "columnsPresentBitmap": {
+      "$buf": "03"
+     },
+     "columnsPresentBitmap2": {
+      "$buf": "03"
+     },
+     "rows": [
+      {
+       "before_values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": "one"
+       },
+       "before_none_sources": {},
+       "after_values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": "uno"
+       },
+       "after_none_sources": {}
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -676,7 +827,7 @@
       "eventType": 16,
       "serverId": 1,
       "eventSize": 27,
-      "logPos": 799,
+      "logPos": 815,
       "flags": 0
      },
      "eventType": 16,
@@ -694,7 +845,7 @@
       "eventType": 162,
       "serverId": 1,
       "eventSize": 38,
-      "logPos": 841,
+      "logPos": 857,
       "flags": 8
      },
      "eventType": 162,
@@ -737,12 +888,12 @@
      "eventHeader": {
       "eventType": 19,
       "serverId": 1,
-      "eventSize": 45,
+      "eventSize": 53,
       "logPos": 0,
       "flags": 0
      },
      "eventType": 19,
-     "eventSize": 45,
+     "eventSize": 53,
      "mysqlVersion": [
       0,
       0,
@@ -785,8 +936,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 2304,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -829,8 +980,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 2304,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -849,8 +1000,11 @@
       }
      },
      "optionalMetadata": {
-      "unsigned_column_list": [],
-      "default_charset_collation": null,
+      "unsigned_column_list": [
+       false,
+       false
+      ],
+      "default_charset_collation": 2304,
       "charset_collation": {},
       "column_charset": [],
       "column_name_list": [],
@@ -862,13 +1016,15 @@
       "enum_and_set_default_charset": null,
       "enum_and_set_charset_collation": {},
       "enum_and_set_default_column_charset_list": [],
-      "charset_collation_list": [],
+      "charset_collation_list": [
+       2304
+      ],
       "enum_and_set_collation_list": [],
       "visibility_list": []
      }
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "DeleteRowsEvent",
      "eventHeader": {
       "eventType": 25,
       "serverId": 1,
@@ -883,7 +1039,70 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "__rows": null,
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__big_number_strings": false,
+     "__none_sources": {},
+     "primaryKey": [],
+     "schema": "test",
+     "table": "t_m",
+     "processed": true,
+     "flags": 1,
+     "numberOfColumns": 2,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 15,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": 2304,
+       "character_set_name": "utf8",
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 80,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "columnsPresentBitmap": {
+      "$buf": "03"
+     },
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 2,
+        "UNKNOWN_COL1": "two"
+       },
+       "none_sources": {}
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -891,7 +1110,7 @@
       "eventType": 16,
       "serverId": 1,
       "eventSize": 27,
-      "logPos": 1012,
+      "logPos": 1036,
       "flags": 0
      },
      "eventType": 16,
@@ -909,7 +1128,7 @@
       "eventType": 162,
       "serverId": 1,
       "eventSize": 38,
-      "logPos": 1054,
+      "logPos": 1078,
       "flags": 8
      },
      "eventType": 162,
@@ -952,12 +1171,12 @@
      "eventHeader": {
       "eventType": 19,
       "serverId": 1,
-      "eventSize": 45,
+      "eventSize": 53,
       "logPos": 0,
       "flags": 0
      },
      "eventType": 19,
-     "eventSize": 45,
+     "eventSize": 53,
      "mysqlVersion": [
       0,
       0,
@@ -1000,8 +1219,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 2304,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -1044,8 +1263,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 2304,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -1064,8 +1283,11 @@
       }
      },
      "optionalMetadata": {
-      "unsigned_column_list": [],
-      "default_charset_collation": null,
+      "unsigned_column_list": [
+       false,
+       false
+      ],
+      "default_charset_collation": 2304,
       "charset_collation": {},
       "column_charset": [],
       "column_name_list": [],
@@ -1077,13 +1299,15 @@
       "enum_and_set_default_charset": null,
       "enum_and_set_charset_collation": {},
       "enum_and_set_default_column_charset_list": [],
-      "charset_collation_list": [],
+      "charset_collation_list": [
+       2304
+      ],
       "enum_and_set_collation_list": [],
       "visibility_list": []
      }
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "WriteRowsEvent",
      "eventHeader": {
       "eventType": 23,
       "serverId": 1,
@@ -1098,7 +1322,70 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "__rows": null,
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__big_number_strings": false,
+     "__none_sources": {},
+     "primaryKey": [],
+     "schema": "test",
+     "table": "t_m",
+     "processed": true,
+     "flags": 1,
+     "numberOfColumns": 2,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 15,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": 2304,
+       "character_set_name": "utf8",
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 80,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "columnsPresentBitmap": {
+      "$buf": "03"
+     },
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 3,
+        "UNKNOWN_COL1": "tx"
+       },
+       "none_sources": {}
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -1106,7 +1393,7 @@
       "eventType": 16,
       "serverId": 1,
       "eventSize": 27,
-      "logPos": 1229,
+      "logPos": 1261,
       "flags": 0
      },
      "eventType": 16,
@@ -1427,12 +1714,12 @@
      "eventHeader": {
       "eventType": 19,
       "serverId": 1,
-      "eventSize": 59,
+      "eventSize": 69,
       "logPos": 0,
       "flags": 0
      },
      "eventType": 19,
-     "eventSize": 59,
+     "eventSize": 69,
      "mysqlVersion": [
       0,
       0,
@@ -1473,7 +1760,7 @@
       {
        "type": 1,
        "name": null,
-       "unsigned": false,
+       "unsigned": true,
        "is_primary": false,
        "charset_id": null,
        "character_set_name": null,
@@ -1511,8 +1798,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 2304,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -1585,8 +1872,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 46,
+       "character_set_name": "utf8",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -1603,8 +1890,8 @@
        "name": null,
        "unsigned": false,
        "is_primary": false,
-       "charset_id": null,
-       "character_set_name": null,
+       "charset_id": 63,
+       "character_set_name": "binary",
        "collation_name": null,
        "enum_values": null,
        "set_values": null,
@@ -1645,7 +1932,7 @@
        {
         "type": 1,
         "name": null,
-        "unsigned": false,
+        "unsigned": true,
         "is_primary": false,
         "charset_id": null,
         "character_set_name": null,
@@ -1683,8 +1970,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 2304,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -1757,8 +2044,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 46,
+        "character_set_name": "utf8",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -1775,8 +2062,8 @@
         "name": null,
         "unsigned": false,
         "is_primary": false,
-        "charset_id": null,
-        "character_set_name": null,
+        "charset_id": 63,
+        "character_set_name": "binary",
         "collation_name": null,
         "enum_values": null,
         "set_values": null,
@@ -1795,10 +2082,24 @@
       }
      },
      "optionalMetadata": {
-      "unsigned_column_list": [],
+      "unsigned_column_list": [
+       false,
+       true,
+       false,
+       false,
+       false,
+       false,
+       false,
+       false,
+       false
+      ],
       "default_charset_collation": null,
       "charset_collation": {},
-      "column_charset": [],
+      "column_charset": [
+       2304,
+       46,
+       63
+      ],
       "column_name_list": [],
       "set_str_value_list": [],
       "set_enum_str_value_list": [],
@@ -1808,13 +2109,17 @@
       "enum_and_set_default_charset": null,
       "enum_and_set_charset_collation": {},
       "enum_and_set_default_column_charset_list": [],
-      "charset_collation_list": [],
+      "charset_collation_list": [
+       2304,
+       46,
+       63
+      ],
       "enum_and_set_collation_list": [],
       "visibility_list": []
      }
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "WriteRowsEvent",
      "eventHeader": {
       "eventType": 23,
       "serverId": 1,
@@ -1829,7 +2134,211 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "__rows": null,
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__big_number_strings": false,
+     "__none_sources": {},
+     "primaryKey": [],
+     "schema": "test",
+     "table": "t_mt",
+     "processed": true,
+     "flags": 1,
+     "numberOfColumns": 9,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 1,
+       "name": null,
+       "unsigned": true,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 8,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 15,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": 2304,
+       "character_set_name": "utf8",
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 120,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 10,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 18,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 246,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0,
+       "precision": 10,
+       "decimals": 2
+      },
+      {
+       "type": 252,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": 46,
+       "character_set_name": "utf8",
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 4,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      },
+      {
+       "type": 252,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": 63,
+       "character_set_name": "binary",
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 2,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "columnsPresentBitmap": {
+      "$buf": "ff01"
+     },
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 1,
+        "UNKNOWN_COL1": 250,
+        "UNKNOWN_COL2": "-9007199254740993",
+        "UNKNOWN_COL3": "héllo",
+        "UNKNOWN_COL4": {
+         "$date": "2024-02-29T00:00:00.000Z"
+        },
+        "UNKNOWN_COL5": {
+         "$date": "2024-02-29T12:34:56.000Z"
+        },
+        "UNKNOWN_COL6": "12.50",
+        "UNKNOWN_COL7": "{\"k\":[1,2]}",
+        "UNKNOWN_COL8": {
+         "$buf": "626c6f62"
+        }
+       },
+       "none_sources": {}
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -1837,7 +2346,7 @@
       "eventType": 16,
       "serverId": 1,
       "eventSize": 27,
-      "logPos": 710,
+      "logPos": 720,
       "flags": 0
      },
      "eventType": 16,
@@ -2158,12 +2667,12 @@
      "eventHeader": {
       "eventType": 19,
       "serverId": 1,
-      "eventSize": 43,
+      "eventSize": 46,
       "logPos": 0,
       "flags": 0
      },
      "eventType": 19,
-     "eventSize": 43,
+     "eventSize": 46,
      "mysqlVersion": [
       0,
       0,
@@ -2234,7 +2743,9 @@
       }
      },
      "optionalMetadata": {
-      "unsigned_column_list": [],
+      "unsigned_column_list": [
+       false
+      ],
       "default_charset_collation": null,
       "charset_collation": {},
       "column_charset": [],
@@ -2253,7 +2764,7 @@
      }
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "WriteRowsEvent",
      "eventHeader": {
       "eventType": 23,
       "serverId": 1,
@@ -2268,7 +2779,51 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "__rows": null,
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__big_number_strings": false,
+     "__none_sources": {},
+     "primaryKey": [],
+     "schema": "test",
+     "table": "t_mr",
+     "processed": true,
+     "flags": 1,
+     "numberOfColumns": 1,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "columnsPresentBitmap": {
+      "$buf": "01"
+     },
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 1
+       },
+       "none_sources": {}
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -2276,7 +2831,7 @@
       "eventType": 16,
       "serverId": 1,
       "eventSize": 27,
-      "logPos": 539,
+      "logPos": 542,
       "flags": 0
      },
      "eventType": 16,
@@ -2294,7 +2849,7 @@
       "eventType": 4,
       "serverId": 1,
       "eventSize": 45,
-      "logPos": 588,
+      "logPos": 591,
       "flags": 0
      },
      "eventType": 4,
@@ -2638,12 +3193,12 @@
      "eventHeader": {
       "eventType": 19,
       "serverId": 1,
-      "eventSize": 43,
+      "eventSize": 46,
       "logPos": 0,
       "flags": 0
      },
      "eventType": 19,
-     "eventSize": 43,
+     "eventSize": 46,
      "mysqlVersion": [
       0,
       0,
@@ -2714,7 +3269,9 @@
       }
      },
      "optionalMetadata": {
-      "unsigned_column_list": [],
+      "unsigned_column_list": [
+       false
+      ],
       "default_charset_collation": null,
       "charset_collation": {},
       "column_charset": [],
@@ -2733,7 +3290,7 @@
      }
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "WriteRowsEvent",
      "eventHeader": {
       "eventType": 23,
       "serverId": 1,
@@ -2748,7 +3305,51 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "__rows": null,
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__big_number_strings": false,
+     "__none_sources": {},
+     "primaryKey": [],
+     "schema": "test",
+     "table": "t_mr",
+     "processed": true,
+     "flags": 1,
+     "numberOfColumns": 1,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "columnsPresentBitmap": {
+      "$buf": "01"
+     },
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 2
+       },
+       "none_sources": {}
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -2756,7 +3357,7 @@
       "eventType": 16,
       "serverId": 1,
       "eventSize": 27,
-      "logPos": 598,
+      "logPos": 601,
       "flags": 0
      },
      "eventType": 16,
@@ -2774,7 +3375,7 @@
       "eventType": 4,
       "serverId": 1,
       "eventSize": 45,
-      "logPos": 647,
+      "logPos": 650,
       "flags": 0
      },
      "eventType": 4,
@@ -3118,12 +3719,12 @@
      "eventHeader": {
       "eventType": 19,
       "serverId": 1,
-      "eventSize": 43,
+      "eventSize": 46,
       "logPos": 0,
       "flags": 0
      },
      "eventType": 19,
-     "eventSize": 43,
+     "eventSize": 46,
      "mysqlVersion": [
       0,
       0,
@@ -3194,7 +3795,9 @@
       }
      },
      "optionalMetadata": {
-      "unsigned_column_list": [],
+      "unsigned_column_list": [
+       false
+      ],
       "default_charset_collation": null,
       "charset_collation": {},
       "column_charset": [],
@@ -3213,7 +3816,7 @@
      }
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "WriteRowsEvent",
      "eventHeader": {
       "eventType": 23,
       "serverId": 1,
@@ -3228,7 +3831,51 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "__rows": null,
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__big_number_strings": false,
+     "__none_sources": {},
+     "primaryKey": [],
+     "schema": "test",
+     "table": "t_mr",
+     "processed": true,
+     "flags": 1,
+     "numberOfColumns": 1,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "columnsPresentBitmap": {
+      "$buf": "01"
+     },
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 3
+       },
+       "none_sources": {}
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -3236,7 +3883,7 @@
       "eventType": 16,
       "serverId": 1,
       "eventSize": 27,
-      "logPos": 598,
+      "logPos": 601,
       "flags": 0
      },
      "eventType": 16,
@@ -3251,7 +3898,7 @@
    ]
   },
   "maria_ddl": {
-   "count": 5,
+   "count": 11,
    "events": [
     {
      "ctor": "RotateEvent",
@@ -3530,12 +4177,267 @@
      "domainId": 0,
      "flags": 41,
      "gtid": "0-1-1"
+    },
+    {
+     "ctor": "QueryEvent",
+     "eventHeader": {
+      "eventType": 2,
+      "serverId": 1,
+      "eventSize": 110,
+      "logPos": 487,
+      "flags": 0
+     },
+     "eventType": 2,
+     "eventSize": 110,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "schemaLength": 4,
+     "errorCode": 0,
+     "statusVarsLength": 35,
+     "flags2": 16777216,
+     "sqlMode": 1411383304,
+     "catalogNzCode": {
+      "$buf": "737464"
+     },
+     "characterSetClient": 224,
+     "collationConnection": 224,
+     "collationServer": 2304,
+     "schema": "test",
+     "query": "CREATE TABLE t_md (id INT PRIMARY KEY)"
+    },
+    {
+     "ctor": "MariadbGtidEvent",
+     "eventHeader": {
+      "eventType": 162,
+      "serverId": 1,
+      "eventSize": 38,
+      "logPos": 529,
+      "flags": 8
+     },
+     "eventType": 162,
+     "eventSize": 38,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "serverId": 1,
+     "gtidSeqNo": 2,
+     "domainId": 0,
+     "flags": 12,
+     "gtid": "0-1-2"
+    },
+    {
+     "ctor": "MariadbAnnotateRowsEvent",
+     "eventHeader": {
+      "eventType": 160,
+      "serverId": 1,
+      "eventSize": 46,
+      "logPos": 0,
+      "flags": 0
+     },
+     "eventType": 160,
+     "eventSize": 46,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "sqlStatement": {
+      "$buf": "494e5345525420494e544f20745f6d642056414c55455320283129"
+     }
+    },
+    {
+     "ctor": "TableMapEvent",
+     "eventHeader": {
+      "eventType": 19,
+      "serverId": 1,
+      "eventSize": 46,
+      "logPos": 0,
+      "flags": 0
+     },
+     "eventType": 19,
+     "eventSize": 46,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__freeze_schema": false,
+     "__optional_meta_data": true,
+     "flags": 1,
+     "schemaLength": 4,
+     "schema": "test",
+     "tableLength": 4,
+     "table": "t_md",
+     "columnCount": 1,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "nullBitmask": {
+      "$buf": "00"
+     },
+     "tableObj": {
+      "schema": "test",
+      "table": "t_md",
+      "columns": [
+       {
+        "type": 3,
+        "name": null,
+        "unsigned": false,
+        "is_primary": false,
+        "charset_id": null,
+        "character_set_name": null,
+        "collation_name": null,
+        "enum_values": null,
+        "set_values": null,
+        "visibility": false,
+        "max_length": 0,
+        "length_size": 0,
+        "fsp": 0,
+        "bits": 0,
+        "bytes": 0,
+        "size": 0
+       }
+      ],
+      "column_name_flag": false,
+      "data": {
+       "primary_key": []
+      }
+     },
+     "optionalMetadata": {
+      "unsigned_column_list": [
+       false
+      ],
+      "default_charset_collation": null,
+      "charset_collation": {},
+      "column_charset": [],
+      "column_name_list": [],
+      "set_str_value_list": [],
+      "set_enum_str_value_list": [],
+      "geometry_type_list": [],
+      "simple_primary_key_list": [],
+      "primary_keys_with_prefix": {},
+      "enum_and_set_default_charset": null,
+      "enum_and_set_charset_collation": {},
+      "enum_and_set_default_column_charset_list": [],
+      "charset_collation_list": [],
+      "enum_and_set_collation_list": [],
+      "visibility_list": []
+     }
+    },
+    {
+     "ctor": "WriteRowsEvent",
+     "eventHeader": {
+      "eventType": 23,
+      "serverId": 1,
+      "eventSize": 34,
+      "logPos": 0,
+      "flags": 0
+     },
+     "eventType": 23,
+     "eventSize": 34,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql",
+     "__rows": null,
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__big_number_strings": false,
+     "__none_sources": {},
+     "primaryKey": [],
+     "schema": "test",
+     "table": "t_md",
+     "processed": true,
+     "flags": 1,
+     "numberOfColumns": 1,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "columnsPresentBitmap": {
+      "$buf": "01"
+     },
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 1
+       },
+       "none_sources": {}
+      }
+     ]
+    },
+    {
+     "ctor": "XidEvent",
+     "eventHeader": {
+      "eventType": 16,
+      "serverId": 1,
+      "eventSize": 27,
+      "logPos": 698,
+      "flags": 0
+     },
+     "eventType": 16,
+     "eventSize": 27,
+     "mysqlVersion": [
+      0,
+      0,
+      0
+     ],
+     "dbms": "mysql"
     }
-   ],
-   "error": "Unknown status variable key: 0x81"
+   ]
   },
-  "maria_no_capability": {
-   "count": 9,
+  "maria_no_annotate": {
+   "count": 8,
    "events": [
     {
      "ctor": "RotateEvent",
@@ -3754,15 +4656,15 @@
      ]
     },
     {
-     "ctor": "UserVarEvent",
+     "ctor": "MariadbGtidListEvent",
      "eventHeader": {
-      "eventType": 14,
+      "eventType": 163,
       "serverId": 1,
       "eventSize": 25,
       "logPos": 286,
-      "flags": 8
+      "flags": 0
      },
-     "eventType": 14,
+     "eventType": 163,
      "eventSize": 25,
      "mysqlVersion": [
       0,
@@ -3770,50 +4672,19 @@
       0
      ],
      "dbms": "mysql",
-     "nameLen": 1,
-     "name": "!",
-     "isNull": 1,
-     "typeToCodesAndMethod": {
-      "0": [
-       "STRING_RESULT",
-       null
-      ],
-      "1": [
-       "REAL_RESULT",
-       null
-      ],
-      "2": [
-       "INT_RESULT",
-       null
-      ],
-      "3": [
-       "ROW_RESULT",
-       null
-      ],
-      "4": [
-       "DECIMAL_RESULT",
-       null
-      ]
-     },
-     "value": null,
-     "flags": null,
-     "tempValueBuffer": {
-      "$buf": ""
-     },
-     "type": null,
-     "charset": null,
-     "valueLen": null
+     "gtidLength": 0,
+     "gtidList": []
     },
     {
-     "ctor": "QueryEvent",
+     "ctor": "MariadbBinLogCheckPointEvent",
      "eventHeader": {
-      "eventType": 2,
+      "eventType": 161,
       "serverId": 1,
       "eventSize": 41,
       "logPos": 331,
-      "flags": 8
+      "flags": 0
      },
-     "eventType": 2,
+     "eventType": 161,
      "eventSize": 41,
      "mysqlVersion": [
       0,
@@ -3821,22 +4692,18 @@
       0
      ],
      "dbms": "mysql",
-     "schemaLength": 0,
-     "errorCode": 0,
-     "statusVarsLength": 0,
-     "schema": "",
-     "query": "# Dummy "
+     "filename": "mariadb-bin.000001"
     },
     {
-     "ctor": "QueryEvent",
+     "ctor": "MariadbGtidEvent",
      "eventHeader": {
-      "eventType": 2,
+      "eventType": 162,
       "serverId": 1,
       "eventSize": 38,
       "logPos": 373,
       "flags": 8
      },
-     "eventType": 2,
+     "eventType": 162,
      "eventSize": 38,
      "mysqlVersion": [
       0,
@@ -3844,46 +4711,23 @@
       0
      ],
      "dbms": "mysql",
-     "schemaLength": 0,
-     "errorCode": 0,
-     "statusVarsLength": 0,
-     "schema": "",
-     "query": "BEGIN"
-    },
-    {
-     "ctor": "QueryEvent",
-     "eventHeader": {
-      "eventType": 2,
-      "serverId": 1,
-      "eventSize": 46,
-      "logPos": 0,
-      "flags": 8
-     },
-     "eventType": 2,
-     "eventSize": 46,
-     "mysqlVersion": [
-      0,
-      0,
-      0
-     ],
-     "dbms": "mysql",
-     "schemaLength": 0,
-     "errorCode": 0,
-     "statusVarsLength": 0,
-     "schema": "",
-     "query": "# Dummy event"
+     "serverId": 1,
+     "gtidSeqNo": 1,
+     "domainId": 0,
+     "flags": 12,
+     "gtid": "0-1-1"
     },
     {
      "ctor": "TableMapEvent",
      "eventHeader": {
       "eventType": 19,
       "serverId": 1,
-      "eventSize": 43,
+      "eventSize": 46,
       "logPos": 0,
       "flags": 0
      },
      "eventType": 19,
-     "eventSize": 43,
+     "eventSize": 46,
      "mysqlVersion": [
       0,
       0,
@@ -3954,7 +4798,9 @@
       }
      },
      "optionalMetadata": {
-      "unsigned_column_list": [],
+      "unsigned_column_list": [
+       false
+      ],
       "default_charset_collation": null,
       "charset_collation": {},
       "column_charset": [],
@@ -3973,7 +4819,7 @@
      }
     },
     {
-     "ctor": "NotImplementedEvent",
+     "ctor": "WriteRowsEvent",
      "eventHeader": {
       "eventType": 23,
       "serverId": 1,
@@ -3988,7 +4834,51 @@
       0,
       0
      ],
-     "dbms": "mysql"
+     "dbms": "mysql",
+     "__rows": null,
+     "__only_tables": null,
+     "__ignored_tables": null,
+     "__only_schemas": null,
+     "__ignored_schemas": null,
+     "__big_number_strings": false,
+     "__none_sources": {},
+     "primaryKey": [],
+     "schema": "test",
+     "table": "t_mn",
+     "processed": true,
+     "flags": 1,
+     "numberOfColumns": 1,
+     "columns": [
+      {
+       "type": 3,
+       "name": null,
+       "unsigned": false,
+       "is_primary": false,
+       "charset_id": null,
+       "character_set_name": null,
+       "collation_name": null,
+       "enum_values": null,
+       "set_values": null,
+       "visibility": false,
+       "max_length": 0,
+       "length_size": 0,
+       "fsp": 0,
+       "bits": 0,
+       "bytes": 0,
+       "size": 0
+      }
+     ],
+     "columnsPresentBitmap": {
+      "$buf": "01"
+     },
+     "rows": [
+      {
+       "values": {
+        "UNKNOWN_COL0": 1
+       },
+       "none_sources": {}
+      }
+     ]
     },
     {
      "ctor": "XidEvent",
@@ -3996,7 +4886,7 @@
       "eventType": 16,
       "serverId": 1,
       "eventSize": 27,
-      "logPos": 539,
+      "logPos": 542,
       "flags": 0
      },
      "eventType": 16,

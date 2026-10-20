@@ -2,14 +2,14 @@
 
 Two independent layers:
 
-- **Baseline** (`baseline-*.json`): what the driver decodes today, bugs included, so a merge or rebase can be checked for behavior changes. A difference means "changed", not "wrong".
+- **Baseline** (`baseline-*.json`): what the driver decodes today, so a merge or rebase can be checked for behavior changes. A difference means "changed", not "wrong".
 - **Expected values** (`expected.js`, `check.js`): what the driver *should* decode, written from the SQL each scenario runs. Known defects are listed in `expected-failures.json`.
 
 Each scenario gets a fresh binlog and its own stream, so a decoder crash in one is recorded for that scenario and does not hide the others. The events collected before a crash are kept.
 
 ## Running
 
-Node >= 22.2 is needed (`zlib.crc32`).
+Node >= 22.2 is needed (`zlib.crc32`), and a Node with `zlib.zstdDecompressSync` (22.15+, 23.8+) for the `compression` scenario.
 
 ```sh
 docker run -d --name binlog-mysql --restart=unless-stopped -e MYSQL_ALLOW_EMPTY_PASSWORD=1 -e MYSQL_DATABASE=test \
@@ -28,7 +28,7 @@ BINLOG_SERVER=mariadb BINLOG_PORT=3398 node $H/harness.js . /tmp/out.json minima
 ```
 
 ```sh
-# Correctness: needs a `minimal` run (`full` fails at the first table map)
+# Correctness
 node $H/harness.js . /tmp/out.json minimal            # also writes /tmp/out.raw.json
 node $H/check.js /tmp/out.raw.json                     # MySQL checks
 BINLOG_SERVER=mariadb BINLOG_PORT=3398 node $H/harness.js . /tmp/maria.json minimal
@@ -42,14 +42,14 @@ The harness drops and recreates the `test` database, resets the binlog, and flip
 
 ## Expected values
 
-`check.js` reads the harness's unmasked `*.raw.json` (the baseline masks `DECIMAL` and `TIME`) and evaluates the checks in `expected.js`: row values per column type with the table-map column type and signedness, update before/after images, deletes, statements, and the key fields of each other event type.
+`check.js` reads the harness's `*.raw.json` (the baseline without the volatile fields stripped) and evaluates the checks in `expected.js`: row values per column type with the table-map column type and signedness, update before/after images, deletes, statements, and the key fields of each other event type.
 
-- Exit code 1 means a check failed that is not in `expected-failures.json`. Known failures are reported with `VERBOSE=1`. A known failure that starts passing is reported as `FIXED`; run `node check.js <raw> --update` to drop it from the list (run it once per server, since the list is merged).
+- Exit code 1 means a check failed that is not in `expected-failures.json`. Known failures are reported with `VERBOSE=1`. A known failure that starts passing is reported as `FIXED`; run `node check.js <raw> --update` to drop it from the list (run it once per server, since the list is merged). The list describes `minimal` runs; a `full` run passes every check.
 - Cell specs say which JS representations are acceptable, following what a regular query returns, but nothing may lose information: a `BIGINT` that does not fit a double must not come back as a plain number, and `BIT` must be a number or Buffer, not a bit string.
 - Events are selected by type code and table name, never by class name, so renamed or replaced event classes do not matter.
 - `verify-expected.js` runs every column-type case through a regular `SELECT` and requires each expectation to accept the result. The non-column checks (statements, sequences, GTIDs) are written from the SQL and not verifiable that way; they agree with what the server logs.
 
-Not covered by expected values: `Xid`, timestamps, thread ids and `executionTime` (stripped as volatile), and column names, which `minimal` metadata does not carry and `full` cannot currently decode.
+Not covered by expected values: `Xid`, timestamps, thread ids and `executionTime` (stripped as volatile), and column names, which only `full` metadata carries.
 
 ## Event coverage
 
@@ -73,28 +73,9 @@ Every code in `lib/constants/binlog_event_types.js` that a current server can se
 
 Not produced: events only pre-5.x servers sent, `INCIDENT` (needs a server fault), `IGNORABLE`, `HEARTBEAT_V2`, `GTID_TAGGED` (MySQL 8.4+), and `MARIADB_START_ENCRYPTION` (needs the encryption plugin and a key file).
 
-## Known defects captured in the baselines
+## Known limitations
 
-Decoding:
-
-- `DECIMAL`: not parsed, reads past the row; rows masked as unstable
-- `TINYINT/BIGINT UNSIGNED`: decoded as signed
-- `TIME`: returned as a `Date` on the current day (baseline keeps the offset from midnight); negative values lose their sign
-- `DATETIME`, `DATETIME(6)`: year 10058
-- `ENUM`, `SET`: null
-- `JSON`, including `PARTIAL_UPDATE_ROWS`: `packet.readBinaryJson` does not exist
-- `binlog_row_metadata=FULL`: `packet.readVariableLengthString` does not exist, so every scenario with a table map fails (baseline `full`)
-- `USER_VAR` with string, real or decimal values: `Buffer overrun`
-- `BINARY(n)`: trailing zero padding is dropped (`'ab'` for `BINARY(4)`); `BIT`: returned as a bit string
-- A failed lazy row decode leaves the event reporting an empty `rows` array on the next access instead of the error again (`_fetch_rows` sets `__rows = []` before decoding)
-- `ROWS_QUERY`, `TRANSACTION_PAYLOAD`, `EXECUTE_LOAD_QUERY`, anonymous GTID: `NotImplementedEvent`
-
-Factory:
-
-- `event_factory.js` indexes `Types.WRITE_ROWS_EVENT`, `UPDATE_ROWS_EVENT` and `DELETE_ROWS_EVENT`, which are not defined, so V1 row events fall through to `NotImplementedEvent`. MariaDB sends V1 row events, so no MariaDB row data is decoded.
-- `Types.EXEC_LOAD_EVENT` (0x0a, obsolete) is mapped to `ExecuteLoadQueryEvent` instead of `EXECUTE_LOAD_QUERY_EVENT` (0x12).
-
-MariaDB:
-
-- Every logged DDL carries status variable `0x81` (`Q_XID`), which `QueryEvent` rejects (`maria_ddl`). The other scenarios create tables with `sql_log_bin=0` to get past it.
-- The driver never sets `@mariadb_slave_capability`, so without it the server sends dummy events (`maria_no_capability`). The harness sets it to `4` for the other scenarios.
+- `ENUM`, `SET`: the member names only exist in `binlog_row_metadata=FULL`. With `minimal` the driver returns the stored index (`ENUM`) or bitmask (`SET`) instead of losing the value; `types.enum.values` and `types.set.values` stay in `expected-failures.json` for that reason.
+- MariaDB only sends signedness with `binlog_row_metadata=MINIMAL` (its default is `NO_LOG`), which the harness sets, as it does for MySQL.
+- Compressed transactions (`TRANSACTION_PAYLOAD`) are inflated into the stream, which needs a Node.js with zstd support; without it reading the stream fails with an error saying so.
+- `DATETIME(n)` and `TIMESTAMP(n)` come back as a `Date`, so fractional seconds are cut to milliseconds.

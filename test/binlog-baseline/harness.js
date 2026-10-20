@@ -5,8 +5,8 @@ process.env.TZ = 'UTC';
 // usage: node harness.js <repoRoot> <out.json> [minimal|full] [baseline.json]
 // Needs a MySQL 8.0 server with the binlog enabled in ROW format, started with
 // --restart=unless-stopped because the `stop` scenario issues SHUTDOWN.
-// Also writes <out>.raw.json with unmasked values for check.js.
-// BINLOG_PORT (default 3399); BINLOG_SERVER=mariadb runs the MariaDB scenarios (the caller must SET @mariadb_slave_capability=4, as done here); BINLOG_SKIP_STOP=1 skips `stop`; QUIET=1 hides coverage.
+// Also writes <out>.raw.json with the volatile fields kept, for check.js.
+// BINLOG_PORT (default 3399); BINLOG_SERVER=mariadb runs the MariaDB scenarios; BINLOG_SKIP_STOP=1 skips `stop`; QUIET=1 hides coverage.
 const path = require('path');
 const fs = require('fs');
 const root = path.resolve(process.argv[2]);
@@ -19,19 +19,18 @@ const cfg = { host: '127.0.0.1', port: Number(process.env.BINLOG_PORT || 3399), 
 
 const typeCases = require('./type-cases.js');
 
-function norm(v, asTimeOfDay) {
+function norm(v) {
   if (typeof v === 'bigint') return { $bigint: v.toString() };
   if (Buffer.isBuffer(v)) return { $buf: v.toString('hex') };
   if (v instanceof Date) {
     if (isNaN(v)) return { $date: 'invalid' };
-    if (asTimeOfDay) return { $msSinceUtcMidnight: v - new Date().setUTCHours(0, 0, 0, 0) };
     return { $date: v.toISOString() };
   }
   if (v && typeof v === 'object' && typeof v.toString === 'function' && v.constructor && v.constructor.name === 'Long') return { $long: v.toString() };
-  if (Array.isArray(v)) return v.map((x) => norm(x, asTimeOfDay));
+  if (Array.isArray(v)) return v.map(norm);
   if (v && typeof v === 'object') {
     const o = {};
-    for (const k of Object.keys(v)) o[k] = norm(v[k], asTimeOfDay);
+    for (const k of Object.keys(v)) o[k] = norm(v[k]);
     return o;
   }
   if (typeof v === 'number' && !Number.isFinite(v)) return { $num: String(v) };
@@ -221,12 +220,12 @@ const mariadbScenarios = {
   maria_ddl: {
     steps: ['CREATE TABLE t_md (id INT PRIMARY KEY)', 'INSERT INTO t_md VALUES (1)'],
   },
-  maria_no_capability: {
+  maria_no_annotate: {
     steps: [
       ...unloggedDdl('CREATE TABLE t_mn (id INT PRIMARY KEY)'),
       'INSERT INTO t_mn VALUES (1)',
     ],
-    noCapability: true,
+    noAnnotate: true,
   },
 };
 
@@ -268,7 +267,7 @@ const SEND_ANNOTATE_ROWS = 0x02;
 
 function dumpFlags(def) {
   if (def.untilHeartbeat) return 0;
-  return isMariaDb && !def.noCapability ? NON_BLOCK | SEND_ANNOTATE_ROWS : NON_BLOCK;
+  return isMariaDb && !def.noAnnotate ? NON_BLOCK | SEND_ANNOTATE_ROWS : NON_BLOCK;
 }
 
 async function totalLoggedEvents(c) {
@@ -306,8 +305,8 @@ async function runScenario(spec) {
   if (def.restart && process.env.BINLOG_SKIP_STOP) return { result: { skipped: true }, raw: { skipped: true } };
 
   const admin = mysql.createConnection(cfg).promise();
+  await admin.query(`SET GLOBAL binlog_row_metadata='${mode}'`);
   if (!isMariaDb) {
-    await admin.query(`SET GLOBAL binlog_row_metadata='${mode}'`);
     await admin.query('SET GLOBAL local_infile=1');
     for (const sql of gtidDown) {
       try { await admin.query(sql); } catch (e) { /* already off */ }
@@ -336,7 +335,6 @@ async function runScenario(spec) {
   let error;
   try {
     if (def.untilHeartbeat) await bc.promise().query('SET @master_heartbeat_period=100000000');
-    if (isMariaDb && !def.noCapability) await bc.promise().query('SET @mariadb_slave_capability=4');
     const stream = await bc.promise().createBinlogStream({
       serverId: 4242, filename: st.File, binlogPos: 4, flags: dumpFlags(def),
     });
@@ -371,16 +369,12 @@ async function runScenario(spec) {
   return { result, raw: { count: raw.length, events: raw, ...(error && { error }) } };
 }
 
-// Decoders known to read past the row and return garbage; only their shape is stable.
-const UNSTABLE_TABLES = new Set(['t_decimal', 't_decimal_small']);
-// The driver returns TIME as a Date on the current day; keep only the offset from midnight.
-const TIME_TABLES = new Set(['t_time', 't_time3']);
 // Fields that vary between runs or only expose raw wire bytes.
-const VOLATILE = new Set(['packet', 'created', 'slaveProxyId', 'xid', 'ddlXid', 'tableId', 'table_id', 'timestamp', 'executionTime', 'tableMap', 'seed1', 'seed2']);
+const VOLATILE = new Set(['packet', 'created', 'slaveProxyId', 'xid', 'ddlXid', 'tableId', 'table_id', 'timestamp', 'executionTime', 'tableMap', 'seed1', 'seed2', 'payload', 'payloadSize', 'uncompressedSize']);
 
 function strip(v) {
   if (Array.isArray(v)) return v.map(strip);
-  if (v && typeof v === 'object' && !v.$buf && !v.$bigint && !v.$date && !v.$long && v.$msSinceUtcMidnight === undefined) {
+  if (v && typeof v === 'object' && !v.$buf && !v.$bigint && !v.$date && !v.$long) {
     const o = {};
     for (const k of Object.keys(v)) if (!VOLATILE.has(k)) o[k] = strip(v[k]);
     return o;
@@ -411,15 +405,12 @@ function decodeRows(e) {
   }
 }
 
-// The raw form keeps every decoded value, including those the comparable form
-// masks, so it can be checked against expected values.
+// The raw form keeps the volatile fields the comparable form strips.
 function serialize(e, { own, rows, rowsError }, raw = false) {
   const o = { ctor: e.constructor && e.constructor.name, ...own };
   if (rowsError) o.rowsError = rowsError;
   else if (rows) {
-    o.rows = !raw && UNSTABLE_TABLES.has(e.table)
-      ? `<${rows.length} rows, unstable>`
-      : norm(rows, !raw && TIME_TABLES.has(e.table));
+    o.rows = norm(rows);
   }
   if (raw) {
     delete o.packet;
